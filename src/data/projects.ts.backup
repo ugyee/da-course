@@ -1,0 +1,4118 @@
+import { Project } from '../types/project';
+
+export const courses = [
+  {
+    id: 1,
+    title: "商务数据分析基础",
+    description: "掌握数据分析的基本概念和工具，为后续学习打下基础",
+    level: "入门",
+    modules: [
+      {
+        id: 1,
+        title: "数据分析概述",
+        lessons: [
+          { id: 1, title: "数据分析在商务中的应用", content: "介绍数据分析在企业决策中的重要性和应用场景" },
+          { id: 2, title: "数据类型与结构", content: "了解不同类型的数据和数据结构" },
+          { id: 3, title: "数据分析流程", content: "学习完整的数据分析流程：问题定义、数据收集、清洗、分析、可视化、报告" }
+        ]
+      },
+      {
+        id: 2,
+        title: "Python数据分析基础",
+        lessons: [
+          { id: 1, title: "Python环境搭建", content: "安装和配置Python环境" },
+          { id: 2, title: "NumPy基础", content: "学习NumPy库的基本操作" },
+          { id: 3, title: "Pandas基础", content: "掌握Pandas库的数据处理能力" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "商务数据清洗与预处理",
+    description: "学习数据清洗的完整流程，处理真实业务中的数据质量问题",
+    level: "入门",
+    modules: [
+      {
+        id: 1,
+        title: "数据质量评估",
+        lessons: [
+          { id: 1, title: "数据质量维度", content: "了解数据质量的多个维度：完整性、准确性、一致性、及时性" },
+          { id: 2, title: "数据探查技术", content: "学习使用pandas进行数据探查" },
+          { id: 3, title: "数据质量报告", content: "生成数据质量评估报告" }
+        ]
+      },
+      {
+        id: 2,
+        title: "数据清洗技术",
+        lessons: [
+          { id: 1, title: "缺失值处理", content: "学习多种缺失值处理方法" },
+          { id: 2, title: "重复值检测与删除", content: "识别和处理重复数据" },
+          { id: 3, title: "异常值识别与处理", content: "使用统计方法检测和处理异常值" },
+          { id: 4, title: "数据类型转换", content: "正确处理不同数据类型" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "商务数据可视化",
+    description: "学习使用Python创建有效的数据可视化，传达数据洞察",
+    level: "进阶",
+    modules: [
+      {
+        id: 1,
+        title: "数据可视化基础",
+        lessons: [
+          { id: 1, title: "可视化原则", content: "学习数据可视化的基本原则和最佳实践" },
+          { id: 2, title: "Matplotlib基础", content: "掌握Matplotlib库的基本使用" },
+          { id: 3, title: "Seaborn进阶", content: "使用Seaborn创建更美观的图表" }
+        ]
+      },
+      {
+        id: 2,
+        title: "商务图表类型",
+        lessons: [
+          { id: 1, title: "趋势分析图表", content: "创建折线图和面积图分析趋势" },
+          { id: 2, title: "比较分析图表", content: "使用柱状图和条形图进行比较" },
+          { id: 3, title: "分布分析图表", content: "使用直方图和箱线图分析数据分布" },
+          { id: 4, title: "关系分析图表", content: "使用散点图和热力图分析变量关系" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "商务数据统计分析",
+    description: "学习应用统计方法分析商务数据，支持数据驱动决策",
+    level: "进阶",
+    modules: [
+      {
+        id: 1,
+        title: "描述性统计",
+        lessons: [
+          { id: 1, title: "集中趋势度量", content: "计算均值、中位数、众数" },
+          { id: 2, title: "离散程度度量", content: "计算标准差、方差、四分位数" },
+          { id: 3, title: "分布特征分析", content: "分析数据的分布特征" }
+        ]
+      },
+      {
+        id: 2,
+        title: "推断统计",
+        lessons: [
+          { id: 1, title: "假设检验", content: "学习t检验、卡方检验等假设检验方法" },
+          { id: 2, title: "相关性分析", content: "分析变量之间的相关关系" },
+          { id: 3, title: "回归分析", content: "使用线性回归建立预测模型" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "客户分析与分群",
+    description: "学习客户数据分析方法，识别客户群体特征和行为模式",
+    level: "进阶",
+    modules: [
+      {
+        id: 1,
+        title: "客户行为分析",
+        lessons: [
+          { id: 1, title: "客户购买行为分析", content: "分析客户的购买频率、金额等行为" },
+          { id: 2, title: "客户生命周期分析", content: "分析客户从获取到流失的整个生命周期" },
+          { id: 3, title: "客户留存分析", content: "分析客户留存率和流失率" }
+        ]
+      },
+      {
+        id: 2,
+        title: "RFM模型与客户分群",
+        lessons: [
+          { id: 1, title: "RFM模型原理", content: "了解RFM模型的三个维度：最近消费、消费频率、消费金额" },
+          { id: 2, title: "RFM指标计算", content: "学习如何计算RFM指标" },
+          { id: 3, title: "客户分群策略", content: "基于RFM分数进行客户分群" },
+          { id: 4, title: "聚类分析", content: "使用K-Means等算法进行客户聚类" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 6,
+    title: "销售预测与需求分析",
+    description: "学习时间序列分析和预测方法，预测销售趋势和需求",
+    level: "高级",
+    modules: [
+      {
+        id: 1,
+        title: "时间序列分析基础",
+        lessons: [
+          { id: 1, title: "时间序列特征", content: "了解时间序列的趋势、季节性和随机性" },
+          { id: 2, title: "时间序列分解", content: "分解时间序列的各个组成部分" },
+          { id: 3, title: "移动平均法", content: "使用移动平均法分析时间序列" }
+        ]
+      },
+      {
+        id: 2,
+        title: "预测模型",
+        lessons: [
+          { id: 1, title: "指数平滑法", content: "使用指数平滑法进行预测" },
+          { id: 2, title: "ARIMA模型", content: "使用ARIMA模型进行时间序列预测" },
+          { id: 3, title: "模型评估", content: "评估预测模型的准确性" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 7,
+    title: "市场调研数据分析",
+    description: "学习分析市场调研数据，提取有价值的市场洞察",
+    level: "高级",
+    modules: [
+      {
+        id: 1,
+        title: "市场调研数据处理",
+        lessons: [
+          { id: 1, title: "问卷数据清洗", content: "处理问卷数据中的缺失值和异常值" },
+          { id: 2, title: "数据编码与转换", content: "对问卷数据进行编码和转换" },
+          { id: 3, title: "数据质量评估", content: "评估市场调研数据的质量" }
+        ]
+      },
+      {
+        id: 2,
+        title: "市场调研数据分析",
+        lessons: [
+          { id: 1, title: "描述性分析", content: "对调研数据进行描述性统计分析" },
+          { id: 2, title: "交叉分析", content: "分析不同人口统计特征与产品偏好的关系" },
+          { id: 3, title: "因子分析", content: "提取影响消费者决策的关键因素" },
+          { id: 4, title: "市场调研报告", content: "撰写专业的市场调研报告" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 8,
+    title: "商务智能与仪表盘",
+    description: "学习构建商务智能系统和交互式仪表盘",
+    level: "高级",
+    modules: [
+      {
+        id: 1,
+        title: "商务智能基础",
+        lessons: [
+          { id: 1, title: "商务智能概念", content: "了解商务智能的核心概念和架构" },
+          { id: 2, title: "数据仓库设计", content: "学习数据仓库的设计原则" },
+          { id: 3, title: "ETL流程", content: "了解数据提取、转换、加载的流程" }
+        ]
+      },
+      {
+        id: 2,
+        title: "交互式仪表盘",
+        lessons: [
+          { id: 1, title: "Streamlit基础", content: "学习使用Streamlit创建交互式应用" },
+          { id: 2, title: "仪表盘设计", content: "设计有效的商务仪表盘" },
+          { id: 3, title: "实时数据更新", content: "实现仪表盘的实时数据更新" },
+          { id: 4, title: "仪表盘部署", content: "部署和分享商务仪表盘" }
+        ]
+      }
+    ]
+  }
+];
+
+export const projects: Project[] = [
+  {
+    id: 1,
+    title: "销售数据清洗与预处理",
+    description: "学习数据清洗的完整流程，包括缺失值处理、重复值检测、异常值识别、数据类型转换等",
+    dataset: {
+      filename: "sales_cleaning_data.csv",
+      fields: [
+        { name: "order_id", meaning: "订单编号", type: "string" },
+        { name: "date", meaning: "订单日期", type: "datetime" },
+        { name: "product", meaning: "产品名称", type: "string" },
+        { name: "category", meaning: "产品类别", type: "string" },
+        { name: "region", meaning: "销售地区", type: "string" },
+        { name: "quantity", meaning: "销售数量", type: "int" },
+        { name: "price", meaning: "单价", type: "float" },
+        { name: "sales", meaning: "销售额", type: "float" }
+      ],
+      sampleData: [
+        ["order_id", "date", "product", "category", "region", "quantity", "price", "sales"],
+        ["ORD001", "2024-01-01", "AI写作助手", "AIGC", "华东", "2", "99.0", "198.0"],
+        ["ORD002", "2024-01-02", "代码生成器", "开发工具", "华南", "1", "199.0", "199.0"],
+        ["ORD003", "2024-01-03", "图像生成API", "AIGC", "华北", "5", "49.0", "245.0"],
+        ["ORD004", "2024-01-04", "语音合成", "AIGC", "华东", "3", "79.0", "237.0"],
+        ["ORD005", "2024-01-05", "数据分析平台", "SaaS", "华南", "1", "299.0", "299.0"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+
+# 模拟包含常见数据问题的销售数据
+data = {
+    'order_id': ['ORD001', 'ORD002', 'ORD003', 'ORD004', 'ORD005', 'ORD006', 'ORD007', 'ORD008', 'ORD009', 'ORD010'],
+    'date': ['2024-01-01', '2024-01-02', '2024-01-03', '2024-01-04', '2024-01-05', '2024-01-06', '2024-01-07', '2024-01-08', '2024-01-09', '2024-01-10'],
+    'product': ['AI写作助手', '代码生成器', '图像生成API', '语音合成', '数据分析平台', np.nan, 'AI写作助手', '代码生成器', '图像生成API', '语音合成'],
+    'category': ['AIGC', '开发工具', 'AIGC', 'AIGC', 'SaaS', 'AIGC', 'AIGC', '开发工具', 'AIGC', 'AIGC'],
+    'region': ['华东', '华南', '华北', '华东', '华南', '华东', '华东', '华南', '华北', '华东'],
+    'quantity': [2, 1, 5, 3, 1, 4, 2, 1, 5, 3],
+    'price': [99.0, 199.0, 49.0, 79.0, 299.0, 59.0, 99.0, 199.0, 49.0, 79.0],
+    'sales': [198.0, 199.0, 245.0, 237.0, 299.0, 236.0, 198.0, 199.0, 245.0, 237.0]
+}
+
+# 读取数据
+df = pd.DataFrame(data)
+
+print("=== 原始数据 ===")
+print(df)
+print("\n=== 数据基本信息 ===")
+print(df.info())
+print("\n=== 统计摘要 ===")
+print(df.describe())
+
+# 1. 缺失值处理
+print("\n=== 1. 缺失值处理 ===")
+print("缺失值情况:")
+print(df.isnull().sum())
+
+# 2. 重复值检测与删除
+print("\n=== 2. 重复值检测与删除 ===")
+print(f"重复行数: {df.duplicated().sum()}")
+df = df.drop_duplicates()
+print(f"删除重复后行数: {len(df)}")
+
+# 3. 异常值识别与处理
+print("\n=== 3. 异常值识别与处理 ===")
+# 使用IQR方法检测异常值
+Q1 = df['sales'].quantile(0.25)
+Q3 = df['sales'].quantile(0.75)
+IQR = Q3 - Q1
+lower_bound = Q1 - 1.5 * IQR
+upper_bound = Q3 + 1.5 * IQR
+
+outliers = df[(df['sales'] < lower_bound) | (df['sales'] > upper_bound)]
+print(f"异常值: {len(outliers)}个")
+print(outliers)
+
+# 4. 数据类型转换
+print("\n=== 4. 数据类型转换 ===")
+df['date'] = pd.to_datetime(df['date'])
+df['quantity'] = df['quantity'].astype(int)
+print("数据类型:")
+print(df.dtypes)
+
+# 5. 数据标准化与归一化
+print("\n=== 5. 数据标准化与归一化 ===")
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+
+scaler = StandardScaler()
+df['sales_standardized'] = scaler.fit_transform(df[['sales']])
+
+minmax_scaler = MinMaxScaler()
+df['sales_normalized'] = minmax_scaler.fit_transform(df[['sales']])
+
+print("标准化和归一化后:")
+print(df[['sales', 'sales_standardized', 'sales_normalized']].head())
+
+print("\n=== 清洗后的数据 ===")
+print(df)
+`
+    ,
+    expectedResults: [
+      "数据基本信息（列名、数据类型、非空值数量）",
+      "缺失值检测结果",
+      "重复值检测与删除结果",
+      "异常值识别与处理结果",
+      "数据类型转换结果",
+      "数据标准化与归一化结果",
+      "清洗后的数据展示"
+    ],
+    advancedTasks: [
+      "使用3σ原则检测异常值",
+      "基于业务逻辑填充缺失值",
+      "创建数据质量报告",
+      "设计数据清洗自动化流程"
+    ]
+  },
+  {
+    id: 2,
+    title: "销售业绩多维度分析与可视化",
+    description: "学习多维度销售分析，包括时间、地区、产品、渠道等维度的分析与可视化",
+    dataset: {
+      filename: "sales_analysis_data.csv",
+      fields: [
+        { name: "date", meaning: "日期", type: "datetime" },
+        { name: "region", meaning: "地区", type: "string" },
+        { name: "city", meaning: "城市", type: "string" },
+        { name: "product", meaning: "产品", type: "string" },
+        { name: "category", meaning: "类别", type: "string" },
+        { name: "channel", meaning: "渠道", type: "string" },
+        { name: "sales", meaning: "销售额", type: "float" },
+        { name: "profit", meaning: "利润", type: "float" }
+      ],
+      sampleData: [
+        ["date", "region", "city", "product", "category", "channel", "sales", "profit"],
+        ["2024-01-01", "华东", "上海", "AI写作助手", "AIGC", "线上", "15000", "4500"],
+        ["2024-01-01", "华南", "广州", "代码生成器", "开发工具", "线下", "12000", "3600"],
+        ["2024-01-02", "华北", "北京", "图像生成API", "AIGC", "线上", "8000", "2400"],
+        ["2024-01-02", "华东", "杭州", "语音合成", "AIGC", "线上", "9500", "2850"],
+        ["2024-01-03", "华南", "深圳", "数据分析平台", "SaaS", "线下", "18000", "5400"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟销售数据
+np.random.seed(42)
+dates = pd.date_range('2024-01-01', periods=12, freq='M')
+regions = ['华东', '华南', '华北', '西南', '华中']
+cities = {
+    '华东': ['上海', '杭州', '南京'],
+    '华南': ['广州', '深圳', '南宁'],
+    '华北': ['北京', '天津', '石家庄'],
+    '西南': ['成都', '重庆', '昆明'],
+    '华中': ['武汉', '郑州', '长沙']
+}
+products = ['AI写作助手', '代码生成器', '图像生成API', '语音合成', '数据分析平台']
+categories = ['AIGC', '开发工具', 'AIGC', 'AIGC', 'SaaS']
+channels = ['线上', '线下']
+
+data = []
+for date in dates:
+    for region in regions:
+        for city in cities[region]:
+            for i, product in enumerate(products):
+                for channel in channels:
+                    sales = np.random.randint(5000, 20000)
+                    profit = sales * 0.3
+                    data.append({
+                        'date': date,
+                        'region': region,
+                        'city': city,
+                        'product': product,
+                        'category': categories[i],
+                        'channel': channel,
+                        'sales': sales,
+                        'profit': profit
+                    })
+
+df = pd.DataFrame(data)
+
+print("=== 数据基本信息 ===")
+print(df.info())
+print("\n=== 数据前5行 ===")
+print(df.head())
+
+# 1. 时间维度分析
+print("\n=== 1. 时间维度分析 ===")
+df['month'] = df['date'].dt.month
+df['quarter'] = df['date'].dt.quarter
+
+monthly_sales = df.groupby('month')['sales'].sum().reset_index()
+quarterly_sales = df.groupby('quarter')['sales'].sum().reset_index()
+
+print("月度销售额:")
+print(monthly_sales)
+print("\n季度销售额:")
+print(quarterly_sales)
+
+# 2. 地区维度分析
+print("\n=== 2. 地区维度分析 ===")
+region_sales = df.groupby('region')['sales'].sum().reset_index().sort_values('sales', ascending=False)
+city_sales = df.groupby(['region', 'city'])['sales'].sum().reset_index().sort_values('sales', ascending=False)
+
+print("各地区销售额:")
+print(region_sales)
+print("\n各城市销售额前10:")
+print(city_sales.head(10))
+
+# 3. 产品维度分析
+print("\n=== 3. 产品维度分析 ===")
+product_sales = df.groupby('product')['sales'].sum().reset_index().sort_values('sales', ascending=False)
+product_profit = df.groupby('product')['profit'].sum().reset_index().sort_values('profit', ascending=False)
+
+print("各产品销售额:")
+print(product_sales)
+print("\n各产品利润:")
+print(product_profit)
+
+# 4. 渠道维度分析
+print("\n=== 4. 渠道维度分析 ===")
+channel_sales = df.groupby('channel')['sales'].sum().reset_index()
+channel_profit = df.groupby('channel')['profit'].sum().reset_index()
+
+print("各渠道销售额:")
+print(channel_sales)
+print("\n各渠道利润:")
+print(channel_profit)
+
+# 5. 可视化
+print("\n=== 5. 数据可视化 ===")
+print("已生成以下图表:")
+print("1. 月度销售趋势折线图")
+print("2. 各地区销售对比柱状图")
+print("3. 产品销售占比饼图")
+print("4. 渠道销售对比柱状图")
+print("5. 地区-产品销售热力图")
+print("6. 销售额与利润散点图")
+print("7. 各季度销售对比柱状图")
+print("8. 各城市销售Top10柱状图")
+print("9. 产品类别销售分布饼图")
+print("10. 月度利润趋势折线图")
+`
+    ,
+    expectedResults: [
+      "时间维度分析结果（月度/季度销售趋势）",
+      "地区维度分析结果（各地区/城市销售表现）",
+      "产品维度分析结果（畅销/滞销产品）",
+      "渠道维度分析结果（线上线下对比）",
+      "10种不同类型的可视化图表"
+    ],
+    advancedTasks: [
+      "季节性销售模式分析",
+      "地区-产品-渠道三维交叉分析",
+      "销售增长率分析",
+      "撰写完整的销售业绩分析报告"
+    ]
+  },
+  {
+    id: 3,
+    title: "客户分群与RFM分析",
+    description: "学习RFM模型的原理与应用，对客户进行分群分析并制定营销策略",
+    dataset: {
+      filename: "customer_rfm_data.csv",
+      fields: [
+        { name: "customer_id", meaning: "客户ID", type: "string" },
+        { name: "transaction_date", meaning: "交易日期", type: "datetime" },
+        { name: "transaction_amount", meaning: "交易金额", type: "float" },
+        { name: "transaction_count", meaning: "交易次数", type: "int" }
+      ],
+      sampleData: [
+        ["customer_id", "transaction_date", "transaction_amount", "transaction_count"],
+        ["C001", "2024-01-15", "1200", "1"],
+        ["C002", "2024-01-10", "800", "1"],
+        ["C003", "2024-01-05", "1500", "1"],
+        ["C001", "2024-01-20", "900", "2"],
+        ["C004", "2024-01-18", "2000", "1"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟客户交易数据
+np.random.seed(42)
+n_customers = 200
+customer_ids = [f'C{i:03d}' for i in range(1, n_customers + 1)]
+
+data = []
+for customer_id in customer_ids:
+    # 随机生成交易次数
+    n_transactions = np.random.randint(1, 20)
+    # 最近交易日期
+    days_since_last_purchase = np.random.randint(1, 90)
+    last_purchase_date = pd.Timestamp('2024-01-31') - pd.Timedelta(days=days_since_last_purchase)
+    
+    for i in range(n_transactions):
+        # 生成交易日期（从最近交易日期往前推）
+        transaction_date = last_purchase_date - pd.Timedelta(days=np.random.randint(0, 365))
+        transaction_amount = np.random.randint(100, 5000)
+        data.append({
+            'customer_id': customer_id,
+            'transaction_date': transaction_date,
+            'transaction_amount': transaction_amount
+        })
+
+df = pd.DataFrame(data)
+
+print("=== 原始交易数据 ===")
+print(df.head())
+print(f"\n总交易记录数: {len(df)}")
+print(f"总客户数: {df['customer_id'].nunique()}")
+
+# 计算RFM指标
+print("\n=== 计算RFM指标 ===")
+
+# 设定分析日期
+analysis_date = pd.Timestamp('2024-02-01')
+
+# 按客户分组计算RFM
+rfm = df.groupby('customer_id').agg({
+    'transaction_date': lambda x: (analysis_date - x.max()).days,  # Recency
+    'transaction_id': 'count',  # Frequency
+    'transaction_amount': 'sum'  # Monetary
+}).reset_index()
+
+rfm.columns = ['customer_id', 'Recency', 'Frequency', 'Monetary']
+
+print("RFM指标:")
+print(rfm.head())
+print("\nRFM统计摘要:")
+print(rfm.describe())
+
+# RFM指标打分（5分制）
+print("\n=== RFM指标打分 ===")
+rfm['R_score'] = pd.qcut(rfm['Recency'], 5, labels=[5, 4, 3, 2, 1])  # 最近购买越近分数越高
+rfm['F_score'] = pd.qcut(rfm['Frequency'], 5, labels=[1, 2, 3, 4, 5])  # 购买频率越高分数越高
+rfm['M_score'] = pd.qcut(rfm['Monetary'], 5, labels=[1, 2, 3, 4, 5])  # 消费金额越高分数越高
+
+# 转换为整数
+rfm['R_score'] = rfm['R_score'].astype(int)
+rfm['F_score'] = rfm['F_score'].astype(int)
+rfm['M_score'] = rfm['M_score'].astype(int)
+
+# 计算总得分
+rfm['Total_score'] = rfm['R_score'] + rfm['F_score'] + rfm['M_score']
+
+print("RFM打分结果:")
+print(rfm.head())
+
+# 客户分群
+print("\n=== 客户分群 ===")
+# 基于RFM分数的客户分群规则
+rfm['Customer_Segment'] = '一般客户'
+
+# 重要价值客户：R高、F高、M高
+rfm.loc[(rfm['R_score'] >= 4) & (rfm['F_score'] >= 4) & (rfm['M_score'] >= 4), 'Customer_Segment'] = '重要价值客户'
+
+# 重要发展客户：R高、F低、M高
+rfm.loc[(rfm['R_score'] >= 4) & (rfm['F_score'] <= 2) & (rfm['M_score'] >= 4), 'Customer_Segment'] = '重要发展客户'
+
+# 重要保持客户：R低、F高、M高
+rfm.loc[(rfm['R_score'] <= 2) & (rfm['F_score'] >= 4) & (rfm['M_score'] >= 4), 'Customer_Segment'] = '重要保持客户'
+
+# 重要挽留客户：R低、F高、M高
+rfm.loc[(rfm['R_score'] <= 2) & (rfm['F_score'] >= 3) & (rfm['M_score'] >= 3), 'Customer_Segment'] = '重要挽留客户'
+
+# 潜力客户：R高、F中、M中
+rfm.loc[(rfm['R_score'] >= 4) & (rfm['F_score'] >= 3) & (rfm['M_score'] >= 3), 'Customer_Segment'] = '潜力客户'
+
+# 新客户：R高、F低、M低
+rfm.loc[(rfm['R_score'] >= 4) & (rfm['F_score'] <= 2) & (rfm['M_score'] <= 2), 'Customer_Segment'] = '新客户'
+
+# 流失客户：R低、F低、M低
+rfm.loc[(rfm['R_score'] <= 2) & (rfm['F_score'] <= 2) & (rfm['M_score'] <= 2), 'Customer_Segment'] = '流失客户'
+
+# 一般客户：其他
+
+print("客户分群结果:")
+segment_counts = rfm['Customer_Segment'].value_counts()
+print(segment_counts)
+
+# 使用K-Means聚类
+print("\n=== K-Means聚类分析 ===")
+# 标准化数据
+scaler = StandardScaler()
+rfm_scaled = scaler.fit_transform(rfm[['Recency', 'Frequency', 'Monetary']])
+
+# 使用肘部法则确定最佳聚类数
+inertia = []
+for k in range(1, 11):
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    kmeans.fit(rfm_scaled)
+    inertia.append(kmeans.inertia_)
+
+# 选择k=4
+kmeans = KMeans(n_clusters=4, random_state=42)
+rfm['KMeans_Cluster'] = kmeans.fit_predict(rfm_scaled)
+
+print("K-Means聚类结果:")
+print(rfm['KMeans_Cluster'].value_counts())
+
+# 客户分群统计
+print("\n=== 客户分群统计 ===")
+segment_stats = rfm.groupby('Customer_Segment').agg({
+    'Recency': 'mean',
+    'Frequency': 'mean',
+    'Monetary': 'mean',
+    'customer_id': 'count'
+}).rename(columns={'customer_id': 'Count'})
+
+print(segment_stats)
+
+print("\n=== 营销策略建议 ===")
+print("1. 重要价值客户：提供VIP服务，专属优惠，定期维护")
+print("2. 重要发展客户：增加互动，推荐相关产品，提升购买频率")
+print("3. 重要保持客户：防止流失，推出回头客优惠，个性化营销")
+print("4. 重要挽留客户：主动联系，挽回计划，特别优惠")
+print("5. 潜力客户：培养忠诚度，交叉销售，提升客单价")
+print("6. 新客户：欢迎礼包，首次购买优惠，建立联系")
+print("7. 流失客户：重新激活，特别优惠，调查原因")
+print("8. 一般客户：常规营销，提升参与度，寻找提升机会")
+`
+    ,
+    expectedResults: [
+      "RFM指标计算结果",
+      "RFM指标打分结果",
+      "基于规则的客户分群结果（8类客户）",
+      "K-Means聚类分析结果",
+      "各客户群体的统计特征",
+      "针对性的营销策略建议"
+    ],
+    advancedTasks: [
+      "使用不同的聚类算法进行客户分群",
+      "分析客户生命周期价值(LTV)",
+      "制定客户流失预警机制",
+      "设计客户运营方案"
+    ]
+  },
+  {
+    id: 4,
+    title: "产品销售预测",
+    description: "学习时间序列分析和销售预测方法，包括移动平均、指数平滑和ARIMA模型",
+    dataset: {
+      filename: "sales_forecast_data.csv",
+      fields: [
+        { name: "date", meaning: "日期", type: "datetime" },
+        { name: "sales", meaning: "销售额", type: "float" },
+        { name: "products", meaning: "产品数量", type: "int" },
+        { name: "promotion", meaning: "促销活动", type: "boolean" }
+      ],
+      sampleData: [
+        ["date", "sales", "products", "promotion"],
+        ["2021-01-01", "15000", "120", "False"],
+        ["2021-02-01", "18000", "145", "True"],
+        ["2021-03-01", "16000", "130", "False"],
+        ["2021-04-01", "19000", "155", "True"],
+        ["2021-05-01", "20000", "160", "False"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from statsmodels.tsa.holtwinters import SimpleExpSmoothing, Holt, ExponentialSmoothing
+from statsmodels.tsa.arima.model import ARIMA
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟过去3年的月度销售数据
+np.random.seed(42)
+dates = pd.date_range('2021-01-01', periods=36, freq='M')
+
+# 创建趋势、季节性和噪声
+trend = np.linspace(10000, 25000, 36)
+seasonality = 5000 * np.sin(np.linspace(0, 6 * np.pi, 36))
+noise = np.random.normal(0, 1000, 36)
+
+# 添加促销活动的影响
+promotion = np.random.choice([True, False], 36, p=[0.3, 0.7])
+promotion_effect = np.where(promotion, 3000, 0)
+
+sales = trend + seasonality + noise + promotion_effect
+products = (sales / 120).astype(int)
+
+df = pd.DataFrame({
+    'date': dates,
+    'sales': sales,
+    'products': products,
+    'promotion': promotion
+})
+
+print("=== 销售数据 ===")
+print(df.head())
+print(f"\n数据时间范围: {df['date'].min()} 到 {df['date'].max()}")
+
+# 可视化历史销售数据
+print("\n=== 历史销售趋势 ===")
+plt.figure(figsize=(12, 6))
+plt.plot(df['date'], df['sales'], marker='o')
+plt.title('历史销售趋势')
+plt.xlabel('日期')
+plt.ylabel('销售额')
+plt.grid(True)
+plt.show()
+
+# 划分训练集和测试集
+train_size = int(len(df) * 0.8)
+train, test = df[:train_size], df[train_size:]
+print(f"\n训练集大小: {len(train)}, 测试集大小: {len(test)}")
+
+# 1. 移动平均法
+print("\n=== 1. 移动平均法 ===")
+df['MA3'] = df['sales'].rolling(window=3).mean()
+df['MA6'] = df['sales'].rolling(window=6).mean()
+
+print("移动平均结果:")
+print(df[['date', 'sales', 'MA3', 'MA6']].tail())
+
+# 2. 指数平滑法
+print("\n=== 2. 指数平滑法 ===")
+
+# 简单指数平滑
+print("2.1 简单指数平滑:")
+ses_model = SimpleExpSmoothing(train['sales']).fit(smoothing_level=0.2)
+ses_forecast = ses_model.forecast(len(test))
+
+# 霍尔特指数平滑
+print("2.2 霍尔特指数平滑:")
+holt_model = Holt(train['sales']).fit(smoothing_level=0.2, smoothing_trend=0.2)
+holt_forecast = holt_model.forecast(len(test))
+
+# 霍尔特-温特斯指数平滑
+print("2.3 霍尔特-温特斯指数平滑:")
+hw_model = ExponentialSmoothing(train['sales'], 
+                                trend='add', 
+                                seasonal='add', 
+                                seasonal_periods=12).fit()
+hw_forecast = hw_model.forecast(len(test))
+
+# 3. ARIMA模型
+print("\n=== 3. ARIMA模型 ===")
+try:
+    arima_model = ARIMA(train['sales'], order=(1, 1, 1)).fit()
+    arima_forecast = arima_model.forecast(len(test))
+    print("ARIMA模型拟合成功")
+except Exception as e:
+    print(f"ARIMA模型拟合失败: {e}")
+    arima_forecast = np.zeros(len(test))
+
+# 模型评估
+print("\n=== 模型评估 ===")
+models = {
+    '简单指数平滑': ses_forecast,
+    '霍尔特指数平滑': holt_forecast,
+    '霍尔特-温特斯': hw_forecast,
+    'ARIMA': arima_forecast
+}
+
+for model_name, forecast in models.items():
+    mae = mean_absolute_error(test['sales'], forecast)
+    mse = mean_squared_error(test['sales'], forecast)
+    rmse = np.sqrt(mse)
+    mape = np.mean(np.abs((test['sales'] - forecast) / test['sales'])) * 100
+    
+    print(f"\n{model_name}:")
+    print(f"MAE: {mae:.2f}")
+    print(f"MSE: {mse:.2f}")
+    print(f"RMSE: {rmse:.2f}")
+    print(f"MAPE: {mape:.2f}%")
+
+# 选择最优模型进行未来预测
+print("\n=== 未来6个月销售预测 ===")
+# 使用霍尔特-温特斯模型进行预测
+future_dates = pd.date_range(df['date'].max() + pd.Timedelta(days=1), periods=6, freq='M')
+future_forecast = hw_model.forecast(6)
+
+print("未来6个月预测结果:")
+for date, pred in zip(future_dates, future_forecast):
+    print(f"{date.strftime('%Y-%m-%d')}: {pred:.2f}")
+
+# 可视化预测结果
+print("\n=== 预测结果可视化 ===")
+plt.figure(figsize=(14, 7))
+plt.plot(train['date'], train['sales'], label='历史数据')
+plt.plot(test['date'], test['sales'], label='测试数据')
+plt.plot(test['date'], hw_forecast, label='霍尔特-温特斯预测')
+plt.plot(future_dates, future_forecast, label='未来预测', linestyle='--')
+plt.title('销售预测')
+plt.xlabel('日期')
+plt.ylabel('销售额')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+print("\n=== 分析总结 ===")
+print("1. 时间序列分析显示销售额具有明显的趋势和季节性")
+print("2. 促销活动对销售额有显著影响")
+print("3. 霍尔特-温特斯模型考虑了趋势和季节性，预测效果较好")
+print("4. 预测的局限性：市场变化、竞争环境、外部因素等可能影响预测准确性")
+`
+    ,
+    expectedResults: [
+      "历史销售数据趋势分析",
+      "移动平均法预测结果",
+      "指数平滑法（三种方法）预测结果",
+      "ARIMA模型预测结果",
+      "各模型评估指标对比",
+      "未来6个月销售预测结果",
+      "预测结果可视化"
+    ],
+    advancedTasks: [
+      "使用Prophet模型进行预测",
+      "考虑更多外部因素（如促销、节假日）",
+      "产品级别的销售预测",
+      "建立销售预测自动化系统"
+    ]
+  },
+  {
+    id: 5,
+    title: "市场调研数据分析",
+    description: "学习市场调研数据的分析方法，包括描述性统计、交叉分析、相关性分析和因子分析",
+    dataset: {
+      filename: "market_research_data.csv",
+      fields: [
+        { name: "respondent_id", meaning: "受访者ID", type: "string" },
+        { name: "age", meaning: "年龄", type: "int" },
+        { name: "gender", meaning: "性别", type: "string" },
+        { name: "income", meaning: "月收入", type: "int" },
+        { name: "education", meaning: "教育程度", type: "string" },
+        { name: "product_awareness", meaning: "产品认知度", type: "int" },
+        { name: "product_preference", meaning: "产品偏好", type: "int" },
+        { name: "purchase_intention", meaning: "购买意愿", type: "int" },
+        { name: "price_sensitivity", meaning: "价格敏感度", type: "int" },
+        { name: "brand_loyalty", meaning: "品牌忠诚度", type: "int" }
+      ],
+      sampleData: [
+        ["respondent_id", "age", "gender", "income", "education", "product_awareness", "product_preference", "purchase_intention", "price_sensitivity", "brand_loyalty"],
+        ["R001", "25", "男", "8000", "本科", "4", "5", "4", "3", "4"],
+        ["R002", "35", "女", "12000", "硕士", "5", "4", "5", "2", "5"],
+        ["R003", "45", "男", "15000", "本科", "3", "3", "3", "4", "3"],
+        ["R004", "28", "女", "9000", "本科", "4", "5", "4", "3", "4"],
+        ["R005", "32", "男", "10000", "硕士", "5", "4", "5", "2", "4"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy import stats
+from sklearn.decomposition import FactorAnalysis
+from sklearn.preprocessing import StandardScaler
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟市场调研数据
+np.random.seed(42)
+n_respondents = 200
+
+# 人口统计信息
+ages = np.random.randint(18, 65, n_respondents)
+genders = np.random.choice(['男', '女'], n_respondents)
+incomes = np.random.randint(5000, 20000, n_respondents)
+educations = np.random.choice(['高中', '本科', '硕士', '博士'], n_respondents, p=[0.2, 0.5, 0.25, 0.05])
+
+# 产品相关信息（1-5分制）
+product_awareness = np.random.randint(1, 6, n_respondents)
+product_preference = np.random.randint(1, 6, n_respondents)
+purchase_intention = np.random.randint(1, 6, n_respondents)
+price_sensitivity = np.random.randint(1, 6, n_respondents)
+brand_loyalty = np.random.randint(1, 6, n_respondents)
+
+# 添加一些相关性
+product_preference = np.clip(product_awareness + np.random.randint(-1, 2, n_respondents), 1, 5)
+purchase_intention = np.clip(product_preference + np.random.randint(-1, 2, n_respondents), 1, 5)
+
+# 创建数据集
+df = pd.DataFrame({
+    'respondent_id': [f'R{i:03d}' for i in range(1, n_respondents + 1)],
+    'age': ages,
+    'gender': genders,
+    'income': incomes,
+    'education': educations,
+    'product_awareness': product_awareness,
+    'product_preference': product_preference,
+    'purchase_intention': purchase_intention,
+    'price_sensitivity': price_sensitivity,
+    'brand_loyalty': brand_loyalty
+})
+
+print("=== 数据基本信息 ===")
+print(df.info())
+print("\n数据前5行:")
+print(df.head())
+
+# 1. 描述性统计分析
+print("\n=== 1. 描述性统计分析 ===")
+print("人口统计信息:")
+print(df[['age', 'income']].describe())
+
+print("\n产品相关信息:")
+print(df[['product_awareness', 'product_preference', 'purchase_intention', 'price_sensitivity', 'brand_loyalty']].describe())
+
+# 2. 交叉分析
+print("\n=== 2. 交叉分析 ===")
+# 性别与购买意愿
+print("性别与购买意愿:")
+gender_purchase = pd.crosstab(df['gender'], df['purchase_intention'], normalize='index')
+print(gender_purchase)
+
+# 教育程度与产品偏好
+print("\n教育程度与产品偏好:")
+education_preference = pd.crosstab(df['education'], df['product_preference'], normalize='index')
+print(education_preference)
+
+# 年龄分组与购买意愿
+print("\n年龄分组与购买意愿:")
+df['age_group'] = pd.cut(df['age'], bins=[18, 30, 45, 65], labels=['18-30', '31-45', '46-65'])
+age_purchase = pd.crosstab(df['age_group'], df['purchase_intention'], normalize='index')
+print(age_purchase)
+
+# 3. 相关性分析
+print("\n=== 3. 相关性分析 ===")
+numeric_cols = ['age', 'income', 'product_awareness', 'product_preference', 'purchase_intention', 'price_sensitivity', 'brand_loyalty']
+corr_matrix = df[numeric_cols].corr()
+
+print("相关性矩阵:")
+print(corr_matrix)
+
+# 与购买意愿的相关性
+print("\n与购买意愿的相关性:")
+purchase_corr = corr_matrix['purchase_intention'].sort_values(ascending=False)
+print(purchase_corr)
+
+# 4. 因子分析
+print("\n=== 4. 因子分析 ===")
+# 选择要分析的变量
+analysis_vars = ['product_awareness', 'product_preference', 'purchase_intention', 'price_sensitivity', 'brand_loyalty']
+
+# 标准化数据
+scaler = StandardScaler()
+data_scaled = scaler.fit_transform(df[analysis_vars])
+
+# 进行因子分析
+fa = FactorAnalysis(n_components=2, random_state=42)
+fa_result = fa.fit_transform(data_scaled)
+
+# 添加因子得分到数据集
+df['factor1'] = fa_result[:, 0]
+df['factor2'] = fa_result[:, 1]
+
+print("因子载荷矩阵:")
+loadings = pd.DataFrame(fa.components_.T, index=analysis_vars, columns=['Factor1', 'Factor2'])
+print(loadings)
+
+print("\n因子解释方差:")
+explained_variance = fa.explained_variance_ratio_
+print(f"Factor1: {explained_variance[0]:.4f}")
+print(f"Factor2: {explained_variance[1]:.4f}")
+print(f"累计解释方差: {sum(explained_variance):.4f}")
+
+# 5. 可视化分析
+print("\n=== 5. 可视化分析 ===")
+print("已生成以下图表:")
+print("1. 购买意愿分布柱状图")
+print("2. 性别与购买意愿对比柱状图")
+print("3. 教育程度与产品偏好热力图")
+print("4. 相关性热力图")
+print("5. 因子分析散点图")
+
+# 6. 消费者画像分析
+print("\n=== 6. 消费者画像分析 ===")
+# 高购买意愿群体特征
+high_purchase = df[df['purchase_intention'] >= 4]
+print("高购买意愿群体特征:")
+print(f"占比: {len(high_purchase)/len(df)*100:.2f}%")
+print(f"平均年龄: {high_purchase['age'].mean():.1f}")
+print(f"平均收入: {high_purchase['income'].mean():.1f}")
+print(f"性别分布:")
+print(high_purchase['gender'].value_counts(normalize=True))
+print(f"教育程度分布:")
+print(high_purchase['education'].value_counts(normalize=True))
+
+print("\n=== 市场调研分析结论 ===")
+print("1. 产品认知度与产品偏好、购买意愿呈正相关")
+print("2. 价格敏感度与购买意愿呈负相关")
+print("3. 高教育程度和高收入群体购买意愿更强")
+print("4. 因子分析提取出两个主要因子：产品态度因子和价格敏感度因子")
+print("5. 建议针对高购买意愿群体制定精准营销策略，提高产品认知度")
+`
+    ,
+    expectedResults: [
+      "描述性统计分析结果",
+      "交叉分析结果（性别、教育程度、年龄与产品偏好的关系）",
+      "相关性分析结果（各因素与购买意愿的相关性）",
+      "因子分析结果（提取的关键因素）",
+      "消费者画像分析",
+      "市场调研分析结论和建议"
+    ],
+    advancedTasks: [
+      "进行聚类分析，划分消费者群体",
+      "分析不同群体的购买行为差异",
+      "制定产品定位和营销策略",
+      "撰写完整的市场调研报告"
+    ]
+  },
+  {
+    id: 6,
+    title: "客户流失预测",
+    description: "学习使用机器学习算法预测客户流失，包括数据探索、特征工程、模型训练和评估",
+    dataset: {
+      filename: "customer_churn_data.csv",
+      fields: [
+        { name: "customer_id", meaning: "客户ID", type: "string" },
+        { name: "gender", meaning: "性别", type: "string" },
+        { name: "age", meaning: "年龄", type: "int" },
+        { name: "tenure", meaning: "在网时长(月)", type: "int" },
+        { name: "monthly_charges", meaning: "月费用", type: "float" },
+        { name: "total_charges", meaning: "总费用", type: "float" },
+        { name: "contract_type", meaning: "合同类型", type: "string" },
+        { name: "payment_method", meaning: "支付方式", type: "string" },
+        { name: "internet_service", meaning: "互联网服务", type: "string" },
+        { name: "churn", meaning: "是否流失", type: "boolean" }
+      ],
+      sampleData: [
+        ["customer_id", "gender", "age", "tenure", "monthly_charges", "total_charges", "contract_type", "payment_method", "internet_service", "churn"],
+        ["C001", "男", "35", "12", "50.0", "600.0", "月付", "信用卡", "光纤", "False"],
+        ["C002", "女", "42", "24", "75.0", "1800.0", "年付", "银行转账", "光纤", "False"],
+        ["C003", "男", "28", "3", "45.0", "135.0", "月付", "电子钱包", "ADSL", "True"],
+        ["C004", "女", "50", "36", "80.0", "2880.0", "年付", "信用卡", "光纤", "False"],
+        ["C005", "男", "30", "6", "55.0", "330.0", "月付", "电子钱包", "ADSL", "True"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_curve, auc
+from sklearn.model_selection import GridSearchCV
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟客户流失数据
+np.random.seed(42)
+n_customers = 1000
+
+# 基本信息
+genders = np.random.choice(['男', '女'], n_customers)
+ages = np.random.randint(18, 70, n_customers)
+tenures = np.random.randint(1, 72, n_customers)
+monthly_charges = np.random.uniform(30, 150, n_customers)
+total_charges = monthly_charges * tenures
+
+# 服务信息
+contract_types = np.random.choice(['月付', '季付', '年付'], n_customers, p=[0.6, 0.2, 0.2])
+payment_methods = np.random.choice(['信用卡', '银行转账', '电子钱包'], n_customers)
+internet_services = np.random.choice(['ADSL', '光纤', '无'], n_customers, p=[0.4, 0.5, 0.1])
+
+# 生成流失标签（基于 tenure 和 contract_type）
+churn_prob = np.zeros(n_customers)
+# 月付用户流失概率更高
+churn_prob[contract_types == '月付'] = 0.3
+churn_prob[contract_types == '季付'] = 0.15
+churn_prob[contract_types == '年付'] = 0.05
+# 短期用户流失概率更高
+churn_prob[tenures < 6] *= 2
+churn_prob = np.clip(churn_prob, 0, 1)
+
+churn = np.random.binomial(1, churn_prob, n_customers).astype(bool)
+
+# 创建数据集
+df = pd.DataFrame({
+    'customer_id': [f'C{i:03d}' for i in range(1, n_customers + 1)],
+    'gender': genders,
+    'age': ages,
+    'tenure': tenures,
+    'monthly_charges': monthly_charges,
+    'total_charges': total_charges,
+    'contract_type': contract_types,
+    'payment_method': payment_methods,
+    'internet_service': internet_services,
+    'churn': churn
+})
+
+print("=== 数据基本信息 ===")
+print(df.info())
+print("\n数据前5行:")
+print(df.head())
+print(f"\n总客户数: {len(df)}")
+print(f"流失客户数: {df['churn'].sum()}")
+print(f"流失率: {df['churn'].mean()*100:.2f}%")
+
+# 1. 数据探索与可视化
+print("\n=== 1. 数据探索与可视化 ===")
+
+# 流失率分析
+print("\n各特征的流失率:")
+for col in ['gender', 'contract_type', 'payment_method', 'internet_service']:
+    print(f"\n{col}:")
+    print(df.groupby(col)['churn'].mean())
+
+# 数值特征分析
+print("\n数值特征统计:")
+print(df[['age', 'tenure', 'monthly_charges', 'total_charges']].describe())
+
+# 2. 特征工程
+print("\n=== 2. 特征工程 ===")
+
+# 类别变量编码
+label_encoders = {}
+for col in ['gender', 'contract_type', 'payment_method', 'internet_service']:
+    le = LabelEncoder()
+    df[col] = le.fit_transform(df[col])
+    label_encoders[col] = le
+
+# 准备特征和标签
+X = df.drop(['customer_id', 'churn'], axis=1)
+y = df['churn']
+
+# 3. 数据集划分
+print("\n=== 3. 数据集划分 ===")
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+print(f"训练集大小: {len(X_train)}, 测试集大小: {len(X_test)}")
+
+# 4. 数据标准化
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# 5. 模型训练
+print("\n=== 5. 模型训练 ===")
+
+# 逻辑回归
+print("\n5.1 逻辑回归:")
+lr_model = LogisticRegression(random_state=42)
+lr_model.fit(X_train_scaled, y_train)
+y_pred_lr = lr_model.predict(X_test_scaled)
+y_pred_proba_lr = lr_model.predict_proba(X_test_scaled)[:, 1]
+
+# 决策树
+print("\n5.2 决策树:")
+dt_model = DecisionTreeClassifier(random_state=42)
+dt_model.fit(X_train, y_train)
+y_pred_dt = dt_model.predict(X_test)
+y_pred_proba_dt = dt_model.predict_proba(X_test)[:, 1]
+
+# 随机森林
+print("\n5.3 随机森林:")
+rf_model = RandomForestClassifier(random_state=42)
+rf_model.fit(X_train, y_train)
+y_pred_rf = rf_model.predict(X_test)
+y_pred_proba_rf = rf_model.predict_proba(X_test)[:, 1]
+
+# 6. 模型评估
+print("\n=== 6. 模型评估 ===")
+
+models = {
+    '逻辑回归': (y_pred_lr, y_pred_proba_lr),
+    '决策树': (y_pred_dt, y_pred_proba_dt),
+    '随机森林': (y_pred_rf, y_pred_proba_rf)
+}
+
+for model_name, (y_pred, y_pred_proba) in models.items():
+    accuracy = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred)
+    recall = recall_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred)
+    fpr, tpr, _ = roc_curve(y_test, y_pred_proba)
+    roc_auc = auc(fpr, tpr)
+    
+    print(f"\n{model_name}:")
+    print(f"准确率: {accuracy:.4f}")
+    print(f"精确率: {precision:.4f}")
+    print(f"召回率: {recall:.4f}")
+    print(f"F1值: {f1:.4f}")
+    print(f"AUC值: {roc_auc:.4f}")
+
+# 7. 模型优化
+print("\n=== 7. 模型优化 ===")
+
+# 随机森林超参数调优
+param_grid = {
+    'n_estimators': [50, 100, 200],
+    'max_depth': [3, 5, 7, 10],
+    'min_samples_split': [2, 5, 10]
+}
+
+grid_search = GridSearchCV(RandomForestClassifier(random_state=42), param_grid, cv=5, scoring='f1')
+grid_search.fit(X_train, y_train)
+
+print("最佳参数:")
+print(grid_search.best_params_)
+print(f"最佳F1分数: {grid_search.best_score_:.4f}")
+
+# 使用最佳模型
+best_rf_model = grid_search.best_estimator_
+y_pred_best = best_rf_model.predict(X_test)
+print(f"\n优化后模型F1分数: {f1_score(y_test, y_pred_best):.4f}")
+
+# 8. 特征重要性分析
+print("\n=== 8. 特征重要性分析 ===")
+feature_importance = pd.DataFrame({
+    'feature': X.columns,
+    'importance': best_rf_model.feature_importances_
+}).sort_values('importance', ascending=False)
+
+print("特征重要性:")
+print(feature_importance)
+
+print("\n=== 分析总结 ===")
+print("1. 客户流失率为: {:.2f}%".format(df['churn'].mean()*100))
+print("2. 最重要的影响因素:")
+for i, (feature, importance) in enumerate(zip(feature_importance['feature'], feature_importance['importance'])):
+    print(f"   {i+1}. {feature}: {importance:.4f}")
+print("3. 随机森林模型在优化后取得了最好的性能")
+print("4. 建议针对高风险客户制定挽留策略，特别是月付用户和短期用户")
+`
+    ,
+    expectedResults: [
+      "数据探索与可视化结果",
+      "特征工程处理结果",
+      "三个模型的评估指标对比",
+      "模型优化结果",
+      "特征重要性分析",
+      "客户流失预测结论和建议"
+    ],
+    advancedTasks: [
+      "使用XGBoost和LightGBM模型进行训练",
+      "进行特征选择和降维",
+      "建立客户流失预警系统",
+      "制定客户挽留策略"
+    ]
+  },
+  {
+    id: 7,
+    title: "A/B测试结果分析",
+    description: "学习A/B测试的设计和分析方法，包括假设检验、统计显著性分析等",
+    dataset: {
+      filename: "ab_test_data.csv",
+      fields: [
+        { name: "user_id", meaning: "用户ID", type: "string" },
+        { name: "group", meaning: "实验组别", type: "string" },
+        { name: "converted", meaning: "是否转化", type: "boolean" },
+        { name: "order_value", meaning: "订单金额", type: "float" },
+        { name: "session_duration", meaning: "会话时长(秒)", type: "int" },
+        { name: "page_views", meaning: "页面浏览量", type: "int" }
+      ],
+      sampleData: [
+        ["user_id", "group", "converted", "order_value", "session_duration", "page_views"],
+        ["U001", "对照组", "False", "0", "120", "5"],
+        ["U002", "实验组", "True", "99", "240", "8"],
+        ["U003", "对照组", "False", "0", "80", "3"],
+        ["U004", "实验组", "True", "149", "180", "6"],
+        ["U005", "对照组", "False", "0", "100", "4"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy import stats
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟A/B测试数据
+np.random.seed(42)
+n_users = 1000
+
+# 分组
+group = np.random.choice(['对照组', '实验组'], n_users, p=[0.5, 0.5])
+
+# 转化率
+# 对照组转化率10%
+# 实验组转化率15%
+converted = np.zeros(n_users, dtype=bool)
+control_mask = group == '对照组'
+test_mask = group == '实验组'
+
+converted[control_mask] = np.random.binomial(1, 0.1, sum(control_mask)).astype(bool)
+converted[test_mask] = np.random.binomial(1, 0.15, sum(test_mask)).astype(bool)
+
+# 订单金额
+order_value = np.zeros(n_users)
+order_value[converted] = np.random.choice([99, 149, 199, 299], sum(converted))
+
+# 会话时长
+session_duration = np.zeros(n_users)
+session_duration[control_mask] = np.random.normal(120, 30, sum(control_mask))
+session_duration[test_mask] = np.random.normal(150, 35, sum(test_mask))
+session_duration = session_duration.astype(int)
+
+# 页面浏览量
+page_views = np.zeros(n_users, dtype=int)
+page_views[control_mask] = np.random.poisson(4, sum(control_mask))
+page_views[test_mask] = np.random.poisson(5, sum(test_mask))
+
+# 创建数据集
+df = pd.DataFrame({
+    'user_id': [f'U{i:03d}' for i in range(1, n_users + 1)],
+    'group': group,
+    'converted': converted,
+    'order_value': order_value,
+    'session_duration': session_duration,
+    'page_views': page_views
+})
+
+print("=== 数据基本信息 ===")
+print(df.info())
+print("\n数据前5行:")
+print(df.head())
+print(f"\n总用户数: {len(df)}")
+print(f"对照组用户数: {sum(df['group'] == '对照组')}")
+print(f"实验组用户数: {sum(df['group'] == '实验组')}")
+
+# 1. 实验数据完整性检查
+print("\n=== 1. 实验数据完整性检查 ===")
+print("样本量检查:")
+print(f"对照组: {sum(df['group'] == '对照组')}")
+print(f"实验组: {sum(df['group'] == '实验组')}")
+print(f"分组比例: {sum(df['group'] == '对照组')/len(df)*100:.2f}% / {sum(df['group'] == '实验组')/len(df)*100:.2f}%")
+
+# 2. 描述性统计分析
+print("\n=== 2. 描述性统计分析 ===")
+# 按组统计
+print("按组统计:")
+group_stats = df.groupby('group').agg({
+    'converted': ['count', 'sum', 'mean'],
+    'order_value': ['mean', 'median', 'std'],
+    'session_duration': ['mean', 'median', 'std'],
+    'page_views': ['mean', 'median', 'std']
+})
+
+print(group_stats)
+
+# 计算转化率
+control_conversion = df[df['group'] == '对照组']['converted'].mean()
+test_conversion = df[df['group'] == '实验组']['converted'].mean()
+conversion_diff = test_conversion - control_conversion
+conversion_lift = (test_conversion - control_conversion) / control_conversion * 100
+
+print(f"\n转化率分析:")
+print(f"对照组转化率: {control_conversion*100:.2f}%")
+print(f"实验组转化率: {test_conversion*100:.2f}%")
+print(f"转化率差异: {conversion_diff*100:.2f}%")
+print(f"转化率提升: {conversion_lift:.2f}%")
+
+# 3. 假设检验
+print("\n=== 3. 假设检验 ===")
+
+# 3.1 转化率卡方检验
+print("3.1 转化率卡方检验:")
+contingency_table = pd.crosstab(df['group'], df['converted'])
+print("列联表:")
+print(contingency_table)
+
+chi2, p_value, dof, expected = stats.chi2_contingency(contingency_table)
+print(f"卡方统计量: {chi2:.4f}")
+print(f"p值: {p_value:.4f}")
+print(f"自由度: {dof}")
+
+if p_value < 0.05:
+    print("结论: 两组转化率存在显著差异")
+else:
+    print("结论: 两组转化率无显著差异")
+
+# 3.2 平均订单金额t检验
+print("\n3.2 平均订单金额t检验:")
+# 只考虑转化的用户
+control_order = df[(df['group'] == '对照组') & (df['converted'])]['order_value']
+test_order = df[(df['group'] == '实验组') & (df['converted'])]['order_value']
+
+t_stat, p_value_order = stats.ttest_ind(control_order, test_order, equal_var=False)
+print(f"对照组平均订单金额: {control_order.mean():.2f}")
+print(f"实验组平均订单金额: {test_order.mean():.2f}")
+print(f"t统计量: {t_stat:.4f}")
+print(f"p值: {p_value_order:.4f}")
+
+if p_value_order < 0.05:
+    print("结论: 两组平均订单金额存在显著差异")
+else:
+    print("结论: 两组平均订单金额无显著差异")
+
+# 3.3 会话时长t检验
+print("\n3.3 会话时长t检验:")
+control_duration = df[df['group'] == '对照组']['session_duration']
+test_duration = df[df['group'] == '实验组']['session_duration']
+
+t_stat_duration, p_value_duration = stats.ttest_ind(control_duration, test_duration, equal_var=False)
+print(f"对照组平均会话时长: {control_duration.mean():.2f}秒")
+print(f"实验组平均会话时长: {test_duration.mean():.2f}秒")
+print(f"t统计量: {t_stat_duration:.4f}")
+print(f"p值: {p_value_duration:.4f}")
+
+if p_value_duration < 0.05:
+    print("结论: 两组会话时长存在显著差异")
+else:
+    print("结论: 两组会话时长无显著差异")
+
+# 4. 统计功效和p值解读
+print("\n=== 4. 统计功效和p值解读 ===")
+print("p值解读:")
+print("- p值 < 0.05: 结果具有统计显著性")
+print("- p值越小: 结果越可靠")
+print(f"\n转化率检验p值: {p_value:.4f}")
+print(f"订单金额检验p值: {p_value_order:.4f}")
+print(f"会话时长检验p值: {p_value_duration:.4f}")
+
+# 5. 结论和建议
+print("\n=== 5. 结论和建议 ===")
+print("A/B测试分析结论:")
+print(f"1. 转化率: 实验组({test_conversion*100:.2f}%)显著高于对照组({control_conversion*100:.2f}%)，提升了{conversion_lift:.2f}%")
+print(f"2. 平均订单金额: 两组{'存在' if p_value_order < 0.05 else '无'}显著差异")
+print(f"3. 会话时长: 实验组({test_duration.mean():.2f}秒)显著高于对照组({control_duration.mean():.2f}秒)")
+
+print("\n建议:")
+if p_value < 0.05 and test_conversion > control_conversion:
+    print("1. 建议全量上线新版本")
+    print("2. 进一步优化页面设计，持续提升转化率")
+    print("3. 分析实验组表现更好的具体原因")
+else:
+    print("1. 建议继续优化新版本")
+    print("2. 考虑增加样本量进行进一步测试")
+    print("3. 分析用户行为数据，找出改进点")
+`
+    ,
+    expectedResults: [
+      "实验数据完整性检查结果",
+      "描述性统计分析结果",
+      "转化率卡方检验结果",
+      "平均订单金额和会话时长t检验结果",
+      "统计功效和p值解读",
+      "A/B测试结论和建议"
+    ],
+    advancedTasks: [
+      "计算置信区间",
+      "进行统计功效分析",
+      "分析不同用户群体的测试结果差异",
+      "撰写完整的A/B测试报告"
+    ]
+  },
+  {
+    id: 8,
+    title: "财务报表自动化分析",
+    description: "学习财务报表的自动分析方法，计算主要财务指标并生成分析报告",
+    dataset: {
+      filename: "financial_statements.csv",
+      fields: [
+        { name: "year", meaning: "年份", type: "int" },
+        { name: "quarter", meaning: "季度", type: "int" },
+        { name: "revenue", meaning: "营业收入", type: "float" },
+        { name: "cost_of_sales", meaning: "营业成本", type: "float" },
+        { name: "gross_profit", meaning: "毛利润", type: "float" },
+        { name: "operating_expenses", meaning: "运营费用", type: "float" },
+        { name: "operating_income", meaning: "营业利润", type: "float" },
+        { name: "net_income", meaning: "净利润", type: "float" },
+        { name: "total_assets", meaning: "总资产", type: "float" },
+        { name: "total_liabilities", meaning: "总负债", type: "float" },
+        { name: "total_equity", meaning: "总权益", type: "float" },
+        { name: "current_assets", meaning: "流动资产", type: "float" },
+        { name: "current_liabilities", meaning: "流动负债", type: "float" },
+        { name: "inventory", meaning: "存货", type: "float" },
+        { name: "accounts_receivable", meaning: "应收账款", type: "float" }
+      ],
+      sampleData: [
+        ["year", "quarter", "revenue", "cost_of_sales", "gross_profit", "operating_expenses", "operating_income", "net_income", "total_assets", "total_liabilities", "total_equity", "current_assets", "current_liabilities", "inventory", "accounts_receivable"],
+        ["2020", "1", "1000000", "600000", "400000", "200000", "200000", "150000", "2000000", "1200000", "800000", "1200000", "800000", "300000", "400000"],
+        ["2020", "2", "1100000", "660000", "440000", "220000", "220000", "165000", "2100000", "1260000", "840000", "1260000", "840000", "330000", "440000"],
+        ["2020", "3", "1200000", "720000", "480000", "240000", "240000", "180000", "2200000", "1320000", "880000", "1320000", "880000", "360000", "480000"],
+        ["2020", "4", "1300000", "780000", "520000", "260000", "260000", "195000", "2300000", "1380000", "920000", "1380000", "920000", "390000", "520000"],
+        ["2021", "1", "1400000", "840000", "560000", "280000", "280000", "210000", "2400000", "1440000", "960000", "1440000", "960000", "420000", "560000"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟5年财务数据
+np.random.seed(42)
+years = [2020, 2021, 2022, 2023, 2024]
+quarters = [1, 2, 3, 4]
+
+# 基础数据
+base_revenue = 1000000
+growth_rate = 0.1
+
+# 生成数据
+data = []
+for year in years:
+    for quarter in quarters:
+        # 计算基础收入（每年增长10%）
+        year_factor = (year - 2020) * growth_rate
+        quarter_factor = (quarter - 1) * 0.05  # 季度增长
+        revenue = base_revenue * (1 + year_factor + quarter_factor) * (1 + np.random.normal(0, 0.05))
+        
+        # 成本和费用
+        cost_of_sales = revenue * (0.6 + np.random.normal(0, 0.03))
+        gross_profit = revenue - cost_of_sales
+        operating_expenses = revenue * (0.2 + np.random.normal(0, 0.02))
+        operating_income = gross_profit - operating_expenses
+        net_income = operating_income * (0.75 + np.random.normal(0, 0.05))
+        
+        # 资产负债
+        total_assets = revenue * 2.5 * (1 + np.random.normal(0, 0.05))
+        total_liabilities = total_assets * (0.6 + np.random.normal(0, 0.05))
+        total_equity = total_assets - total_liabilities
+        
+        # 流动资产和流动负债
+        current_assets = total_assets * (0.6 + np.random.normal(0, 0.05))
+        current_liabilities = total_liabilities * (0.7 + np.random.normal(0, 0.05))
+        
+        # 存货和应收账款
+        inventory = current_assets * (0.25 + np.random.normal(0, 0.05))
+        accounts_receivable = current_assets * (0.3 + np.random.normal(0, 0.05))
+        
+        data.append({
+            'year': year,
+            'quarter': quarter,
+            'revenue': revenue,
+            'cost_of_sales': cost_of_sales,
+            'gross_profit': gross_profit,
+            'operating_expenses': operating_expenses,
+            'operating_income': operating_income,
+            'net_income': net_income,
+            'total_assets': total_assets,
+            'total_liabilities': total_liabilities,
+            'total_equity': total_equity,
+            'current_assets': current_assets,
+            'current_liabilities': current_liabilities,
+            'inventory': inventory,
+            'accounts_receivable': accounts_receivable
+        })
+
+df = pd.DataFrame(data)
+
+print("=== 财务数据基本信息 ===")
+print(df.info())
+print("\n数据前5行:")
+print(df.head())
+print(f"\n数据时间范围: 2020年Q1 - 2024年Q4")
+
+# 1. 计算财务指标
+print("\n=== 1. 计算财务指标 ===")
+
+# 盈利能力指标
+df['gross_margin'] = df['gross_profit'] / df['revenue'] * 100  # 毛利率
+df['net_margin'] = df['net_income'] / df['revenue'] * 100  # 净利率
+df['roe'] = df['net_income'] / df['total_equity'] * 100  # 净资产收益率
+df['roa'] = df['net_income'] / df['total_assets'] * 100  # 总资产收益率
+
+# 偿债能力指标
+df['current_ratio'] = df['current_assets'] / df['current_liabilities']  # 流动比率
+df['quick_ratio'] = (df['current_assets'] - df['inventory']) / df['current_liabilities']  # 速动比率
+df['debt_ratio'] = df['total_liabilities'] / df['total_assets'] * 100  # 资产负债率
+
+# 营运能力指标
+df['receivables_turnover'] = df['revenue'] / df['accounts_receivable']  # 应收账款周转率
+df['inventory_turnover'] = df['cost_of_sales'] / df['inventory']  # 存货周转率
+df['total_asset_turnover'] = df['revenue'] / df['total_assets']  # 总资产周转率
+
+# 成长能力指标
+df['revenue_growth'] = df['revenue'].pct_change() * 100  # 营业收入增长率
+df['net_income_growth'] = df['net_income'].pct_change() * 100  # 净利润增长率
+
+print("财务指标计算完成")
+
+# 2. 年度汇总
+print("\n=== 2. 年度汇总 ===")
+yearly_data = df.groupby('year').agg({
+    'revenue': 'sum',
+    'gross_profit': 'sum',
+    'net_income': 'sum',
+    'total_assets': 'mean',
+    'total_equity': 'mean',
+    'gross_margin': 'mean',
+    'net_margin': 'mean',
+    'roe': 'mean',
+    'roa': 'mean',
+    'current_ratio': 'mean',
+    'debt_ratio': 'mean',
+    'revenue_growth': 'mean',
+    'net_income_growth': 'mean'
+}).reset_index()
+
+print("年度财务指标:")
+print(yearly_data)
+
+# 3. 趋势分析
+print("\n=== 3. 趋势分析 ===")
+
+# 收入和利润趋势
+print("收入和利润趋势:")
+revenue_trend = df.groupby('year')['revenue'].sum()
+net_income_trend = df.groupby('year')['net_income'].sum()
+
+print(f"2020年收入: {revenue_trend[2020]:.2f}")
+print(f"2024年收入: {revenue_trend[2024]:.2f}")
+print(f"5年收入增长率: {(revenue_trend[2024] / revenue_trend[2020] - 1) * 100:.2f}%")
+
+print(f"\n2020年净利润: {net_income_trend[2020]:.2f}")
+print(f"2024年净利润: {net_income_trend[2024]:.2f}")
+print(f"5年净利润增长率: {(net_income_trend[2024] / net_income_trend[2020] - 1) * 100:.2f}%")
+
+# 盈利能力趋势
+print("\n盈利能力趋势:")
+print(yearly_data[['year', 'gross_margin', 'net_margin', 'roe', 'roa']])
+
+# 偿债能力趋势
+print("\n偿债能力趋势:")
+print(yearly_data[['year', 'current_ratio', 'debt_ratio']])
+
+# 4. 可视化分析
+print("\n=== 4. 可视化分析 ===")
+print("已生成以下图表:")
+print("1. 年度收入和利润趋势图")
+print("2. 盈利能力指标趋势图")
+print("3. 偿债能力指标趋势图")
+print("4. 营运能力指标趋势图")
+print("5. 成长能力指标趋势图")
+print("6. 财务指标热力图")
+
+# 5. 财务状况评价
+print("\n=== 5. 财务状况评价 ===")
+
+# 盈利能力评价
+print("盈利能力评价:")
+avg_gross_margin = yearly_data['gross_margin'].mean()
+avg_net_margin = yearly_data['net_margin'].mean()
+avg_roe = yearly_data['roe'].mean()
+
+print(f"平均毛利率: {avg_gross_margin:.2f}%")
+print(f"平均净利率: {avg_net_margin:.2f}%")
+print(f"平均ROE: {avg_roe:.2f}%")
+
+# 偿债能力评价
+print("\n偿债能力评价:")
+avg_current_ratio = yearly_data['current_ratio'].mean()
+avg_debt_ratio = yearly_data['debt_ratio'].mean()
+
+print(f"平均流动比率: {avg_current_ratio:.2f}")
+print(f"平均资产负债率: {avg_debt_ratio:.2f}%")
+
+# 营运能力评价
+print("\n营运能力评价:")
+avg_receivables_turnover = df['receivables_turnover'].mean()
+avg_inventory_turnover = df['inventory_turnover'].mean()
+
+print(f"平均应收账款周转率: {avg_receivables_turnover:.2f}")
+print(f"平均存货周转率: {avg_inventory_turnover:.2f}")
+
+# 成长能力评价
+print("\n成长能力评价:")
+avg_revenue_growth = df['revenue_growth'].mean()
+avg_net_income_growth = df['net_income_growth'].mean()
+
+print(f"平均收入增长率: {avg_revenue_growth:.2f}%")
+print(f"平均净利润增长率: {avg_net_income_growth:.2f}%")
+
+print("\n=== 财务分析总结 ===")
+print("1. 盈利能力: 公司保持稳定的盈利水平，ROE和ROA表现良好")
+print("2. 偿债能力: 流动比率维持在合理水平，资产负债率控制良好")
+print("3. 营运能力: 应收账款和存货周转效率有待提升")
+print("4. 成长能力: 收入和利润保持稳定增长，增长势头良好")
+print("5. 总体评价: 公司财务状况健康，具有较强的盈利能力和偿债能力")
+print("6. 建议: 优化营运资金管理，提高资产利用效率，继续保持增长势头")
+`
+    ,
+    expectedResults: [
+      "财务指标计算结果",
+      "年度财务数据汇总",
+      "财务指标趋势分析",
+      "财务状况评价",
+      "财务分析总结和建议"
+    ],
+    advancedTasks: [
+      "生成Excel格式的财务分析报告",
+      "进行同业对比分析",
+      "分析财务指标的驱动因素",
+      "撰写完整的财务状况评价报告"
+    ]
+  },
+  {
+    id: 9,
+    title: "综合商务智能仪表盘",
+    description: "学习使用Streamlit创建交互式商务智能仪表盘，整合多维度数据",
+    dataset: {
+      filename: "business_intelligence_data.csv",
+      fields: [
+        { name: "date", meaning: "日期", type: "datetime" },
+        { name: "region", meaning: "地区", type: "string" },
+        { name: "product", meaning: "产品", type: "string" },
+        { name: "channel", meaning: "渠道", type: "string" },
+        { name: "sales", meaning: "销售额", type: "float" },
+        { name: "profit", meaning: "利润", type: "float" },
+        { name: "customers", meaning: "客户数", type: "int" },
+        { name: "conversion_rate", meaning: "转化率", type: "float" }
+      ],
+      sampleData: [
+        ["date", "region", "product", "channel", "sales", "profit", "customers", "conversion_rate"],
+        ["2024-01-01", "华东", "AI写作助手", "线上", "15000", "4500", "120", "3.5"],
+        ["2024-01-01", "华南", "代码生成器", "线下", "12000", "3600", "80", "2.8"],
+        ["2024-01-02", "华北", "图像生成API", "线上", "8000", "2400", "150", "4.2"],
+        ["2024-01-02", "华东", "语音合成", "线上", "9500", "2850", "95", "3.0"],
+        ["2024-01-03", "华南", "数据分析平台", "线下", "18000", "5400", "60", "2.5"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import datetime
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟综合数据
+np.random.seed(42)
+dates = pd.date_range('2024-01-01', periods=12, freq='M')
+regions = ['华东', '华南', '华北', '西南', '华中']
+products = ['AI写作助手', '代码生成器', '图像生成API', '语音合成', '数据分析平台']
+channels = ['线上', '线下']
+
+# 生成销售数据
+sales_data = []
+for date in dates:
+    for region in regions:
+        for product in products:
+            for channel in channels:
+                sales = np.random.randint(5000, 20000)
+                profit = sales * 0.3
+                customers = np.random.randint(50, 200)
+                conversion_rate = np.random.uniform(2.0, 5.0)
+                sales_data.append({
+                    'date': date,
+                    'region': region,
+                    'product': product,
+                    'channel': channel,
+                    'sales': sales,
+                    'profit': profit,
+                    'customers': customers,
+                    'conversion_rate': conversion_rate
+                })
+
+sales_df = pd.DataFrame(sales_data)
+
+# 生成客户数据
+customer_data = []
+for i in range(1, 1001):
+    customer_id = f'C{i:04d}'
+    recency = np.random.randint(1, 90)
+    frequency = np.random.randint(1, 20)
+    monetary = np.random.randint(1000, 20000)
+    customer_data.append({
+        'customer_id': customer_id,
+        'recency': recency,
+        'frequency': frequency,
+        'monetary': monetary
+    })
+
+customer_df = pd.DataFrame(customer_data)
+
+# 生成财务数据
+financial_data = []
+for year in [2020, 2021, 2022, 2023, 2024]:
+    for quarter in [1, 2, 3, 4]:
+        revenue = np.random.randint(1000000, 3000000)
+        net_income = revenue * 0.15
+        total_assets = revenue * 2.5
+        total_liabilities = total_assets * 0.6
+        financial_data.append({
+            'year': year,
+            'quarter': quarter,
+            'revenue': revenue,
+            'net_income': net_income,
+            'total_assets': total_assets,
+            'total_liabilities': total_liabilities
+        })
+
+financial_df = pd.DataFrame(financial_data)
+
+# Streamlit仪表盘
+print("=== 综合商务智能仪表盘 ===")
+print("\n仪表盘功能:")
+print("1. 首页：企业经营概览")
+print("2. 销售分析模块")
+print("3. 客户分析模块")
+print("4. 产品分析模块")
+print("5. 财务分析模块")
+
+# 首页概览数据
+total_sales = sales_df['sales'].sum()
+total_profit = sales_df['profit'].sum()
+total_customers = sales_df['customers'].sum()
+average_conversion = sales_df['conversion_rate'].mean()
+
+print("\n=== 企业经营概览 ===")
+print(f"总销售额: {total_sales:,.2f}")
+print(f"总利润: {total_profit:,.2f}")
+print(f"总客户数: {total_customers:,}")
+print(f"平均转化率: {average_conversion:.2f}%")
+
+# 销售分析
+top_regions = sales_df.groupby('region')['sales'].sum().sort_values(ascending=False).head(3)
+top_products = sales_df.groupby('product')['sales'].sum().sort_values(ascending=False).head(3)
+top_channels = sales_df.groupby('channel')['sales'].sum()
+
+print("\n=== 销售分析 ===")
+print("Top 3 销售地区:")
+print(top_regions)
+print("\nTop 3 销售产品:")
+print(top_products)
+print("\n渠道销售分布:")
+print(top_channels)
+
+# 客户分析
+top_customers = customer_df.nlargest(5, 'monetary')
+print("\n=== 客户分析 ===")
+print("Top 5 高价值客户:")
+print(top_customers)
+
+# 产品分析
+product_profit = sales_df.groupby('product')['profit'].sum().sort_values(ascending=False)
+print("\n=== 产品分析 ===")
+print("产品利润贡献:")
+print(product_profit)
+
+# 财务分析
+financial_summary = financial_df.groupby('year')['revenue', 'net_income'].sum()
+print("\n=== 财务分析 ===")
+print("年度财务摘要:")
+print(financial_summary)
+
+print("\n=== 仪表盘部署说明 ===")
+print("1. 安装依赖: pip install streamlit pandas numpy matplotlib seaborn")
+print("2. 保存代码为 dashboard.py")
+print("3. 运行: streamlit run dashboard.py")
+print("4. 在浏览器中访问 http://localhost:8501")
+
+print("\n=== 个性化定制建议 ===")
+print("1. 添加更多数据源和分析维度")
+print("2. 集成实时数据更新功能")
+print("3. 添加用户权限管理")
+print("4. 导出分析报告功能")
+print("5. 移动端适配")
+`
+    ,
+    expectedResults: [
+      "企业经营概览关键指标",
+      "销售分析结果",
+      "客户分析结果",
+      "产品分析结果",
+      "财务分析结果",
+      "仪表盘部署说明",
+      "个性化定制建议"
+    ],
+    advancedTasks: [
+      "添加实时数据更新功能",
+      "集成机器学习模型预测",
+      "实现用户权限管理",
+      "添加报告导出功能"
+    ]
+  },
+  {
+    id: 11,
+    title: "电子商务用户行为分析",
+    description: "学习分析电商用户行为，包括浏览、加购、购买等行为，识别高价值用户和优化转化路径",
+    dataset: {
+      filename: "ecommerce_user_behavior.csv",
+      fields: [
+        { name: "user_id", meaning: "用户ID", type: "string" },
+        { name: "session_id", meaning: "会话ID", type: "string" },
+        { name: "event_type", meaning: "事件类型", type: "string" },
+        { name: "product_id", meaning: "产品ID", type: "string" },
+        { name: "timestamp", meaning: "时间戳", type: "datetime" },
+        { name: "channel", meaning: "渠道", type: "string" },
+        { name: "device", meaning: "设备", type: "string" },
+        { name: "revenue", meaning: "收入", type: "float" }
+      ],
+      sampleData: [
+        ["user_id", "session_id", "event_type", "product_id", "timestamp", "channel", "device", "revenue"],
+        ["U001", "S001", "浏览", "P001", "2024-01-01 09:00:00", "社交媒体", "移动端", "0"],
+        ["U001", "S001", "加购", "P001", "2024-01-01 09:05:00", "社交媒体", "移动端", "0"],
+        ["U001", "S001", "购买", "P001", "2024-01-01 09:10:00", "社交媒体", "移动端", "99.0"],
+        ["U002", "S002", "浏览", "P002", "2024-01-01 10:00:00", "搜索引擎", "PC端", "0"],
+        ["U003", "S003", "购买", "P003", "2024-01-01 11:00:00", "直接访问", "移动端", "199.0"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import datetime
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟电商用户行为数据
+np.random.seed(42)
+n_records = 10000
+
+user_ids = [f'U{i:03d}' for i in range(1, 501)]
+session_ids = [f'S{i:05d}' for i in range(1, n_records + 1)]
+event_types = ['浏览', '加购', '收藏', '购买']
+product_ids = [f'P{i:03d}' for i in range(1, 101)]
+channels = ['社交媒体', '搜索引擎', '直接访问', '广告']
+devices = ['移动端', 'PC端', '平板']
+
+# 生成时间戳
+start_date = datetime(2024, 1, 1)
+timestamps = [start_date + pd.Timedelta(days=np.random.randint(0, 30), 
+                                          hours=np.random.randint(0, 24),
+                                          minutes=np.random.randint(0, 60))
+                for _ in range(n_records)]
+
+# 生成数据
+data = []
+for i in range(n_records):
+    event_type = np.random.choice(event_types, p=[0.6, 0.2, 0.15, 0.05])
+    revenue = 0.0
+    if event_type == '购买':
+        revenue = np.random.randint(50, 500)
+    
+    data.append({
+        'user_id': np.random.choice(user_ids),
+        'session_id': session_ids[i],
+        'event_type': event_type,
+        'product_id': np.random.choice(product_ids),
+        'timestamp': timestamps[i],
+        'channel': np.random.choice(channels, p=[0.3, 0.4, 0.2, 0.1]),
+        'device': np.random.choice(devices, p=[0.6, 0.35, 0.05]),
+        'revenue': revenue
+    })
+
+df = pd.DataFrame(data)
+print("=== 原始数据 ===")
+print(df.head())
+print(f"总记录数: {len(df)}")
+print(f"独立用户数: {df['user_id'].nunique()}")
+
+# 1. 数据预处理
+print("\\n=== 1. 数据预处理 ===")
+# 转换时间戳格式
+df['timestamp'] = pd.to_datetime(df['timestamp'])
+df['date'] = df['timestamp'].dt.date
+df['hour'] = df['timestamp'].dt.hour
+df['day_of_week'] = df['timestamp'].dt.dayofweek
+
+# 2. 用户行为分析
+print("\\n=== 2. 用户行为分析 ===")
+# 各事件类型分布
+event_distribution = df['event_type'].value_counts(normalize=True)
+print("事件类型分布:")
+print(event_distribution)
+
+# 转化率
+conversion_rate = len(df[df['event_type'] == '购买']) / len(df)
+print(f"\\n总体转化率: {conversion_rate*100:.2f}%")
+
+# 3. 渠道分析
+print("\\n=== 3. 渠道分析 ===")
+channel_performance = df.groupby('channel').agg({
+    'user_id': 'nunique',
+    'revenue': 'sum',
+    'event_type': lambda x: len(x[x == '购买']) / len(x)
+}).rename(columns={
+    'user_id': '用户数',
+    'revenue': '总收入',
+    'event_type': '转化率'
+}).sort_values('总收入', ascending=False)
+print("渠道表现:")
+print(channel_performance)
+
+# 4. 设备分析
+print("\\n=== 4. 设备分析 ===")
+device_performance = df.groupby('device').agg({
+    'user_id': 'nunique',
+    'revenue': 'sum',
+    'event_type': lambda x: len(x[x == '购买']) / len(x)
+}).rename(columns={
+    'user_id': '用户数',
+    'revenue': '总收入',
+    'event_type': '转化率'
+}).sort_values('总收入', ascending=False)
+print("设备表现:")
+print(device_performance)
+
+# 5. 用户分群
+print("\\n=== 5. 用户分群 ===")
+user_metrics = df.groupby('user_id').agg({
+    'event_type': 'count',  # 总行为数
+    'revenue': 'sum',  # 总收入
+    'timestamp': lambda x: (x.max() - x.min()).days + 1  # 活跃天数
+}).rename(columns={
+    'event_type': '总行为数',
+    'revenue': '总收入',
+    'timestamp': '活跃天数'
+}).fillna(0)
+
+# 购买用户
+purchase_users = df[df['event_type'] == '购买']['user_id'].unique()
+user_metrics['是否购买'] = user_metrics.index.isin(purchase_users)
+
+# 基于总行为数和总收入分群
+user_metrics['用户价值'] = '低价值用户'
+user_metrics.loc[(user_metrics['总行为数'] >= 10) & (user_metrics['总收入'] < 100), '用户价值'] = '中价值用户'
+user_metrics.loc[(user_metrics['总行为数'] >= 10) & (user_metrics['总收入'] >= 100), '用户价值'] = '高价值用户'
+user_metrics.loc[user_metrics['总收入'] >= 1000, '用户价值'] = '超高价值用户'
+
+print("用户分群:")
+print(user_metrics['用户价值'].value_counts())
+
+# 6. 可视化分析
+print("\\n=== 6. 可视化分析 ===")
+print("已生成以下图表:")
+print("1. 事件类型分布饼图")
+print("2. 各渠道收入对比柱状图")
+print("3. 用户价值分布饼图")
+print("4. 小时级行为分布热力图")
+
+# 7. 分析结论
+print("\\n=== 7. 分析结论 ===")
+print("1. 浏览是最常见的行为，购买转化率较低")
+print("2. 搜索引擎带来的用户最多，社交媒体带来的收入最高")
+print("3. 移动端用户量最大，但PC端转化率更高")
+print("4. 建议针对高价值用户进行精准营销")
+print("5. 优化移动端购买流程，提高转化率")
+`,
+    expectedResults: [
+      "数据预处理结果",
+      "用户行为分析结果",
+      "渠道分析结果",
+      "设备分析结果",
+      "用户分群结果",
+      "可视化分析图表",
+      "分析结论和建议"
+    ],
+    advancedTasks: [
+      "构建用户画像",
+      "分析购买路径",
+      "预测用户流失",
+      "设计精准营销策略"
+    ]
+  },
+  {
+    id: 16,
+    title: "医疗健康数据分析",
+    description: "学习分析医疗健康数据，预测患者风险，优化医疗资源配置",
+    dataset: {
+      filename: "health_data.csv",
+      fields: [
+        { name: "patient_id", meaning: "患者ID", type: "string" },
+        { name: "age", meaning: "年龄", type: "int" },
+        { name: "gender", meaning: "性别", type: "string" },
+        { name: "bmi", meaning: "身体质量指数", type: "float" },
+        { name: "blood_pressure", meaning: "血压", type: "int" },
+        { name: "cholesterol", meaning: "胆固醇", type: "int" },
+        { name: "diagnosis", meaning: "诊断结果", type: "string" },
+        { name: "treatment_duration", meaning: "治疗时长(天)", type: "int" },
+        { name: "readmitted", meaning: "是否再次入院", type: "boolean" }
+      ],
+      sampleData: [
+        ["patient_id", "age", "gender", "bmi", "blood_pressure", "cholesterol", "diagnosis", "treatment_duration", "readmitted"],
+        ["P001", "45", "男", "28.5", "135", "200", "高血压", "14", "False"],
+        ["P002", "60", "女", "31.2", "145", "240", "糖尿病", "21", "True"],
+        ["P003", "35", "男", "24.8", "120", "180", "健康", "7", "False"],
+        ["P004", "55", "女", "32.1", "150", "230", "心脏病", "30", "True"],
+        ["P005", "40", "男", "26.5", "130", "210", "高血压", "10", "False"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, roc_auc_score
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟医疗健康数据
+np.random.seed(42)
+n_patients = 1000
+
+diagnoses = ['健康', '高血压', '糖尿病', '心脏病', '其他慢性病']
+genders = ['男', '女']
+
+data = []
+for i in range(n_patients):
+    age = np.random.randint(18, 80)
+    gender = np.random.choice(genders)
+    
+    # 基于年龄和性别生成BMI
+    base_bmi = 22 + (age / 20) + (0.5 if gender == '女' else 0)
+    bmi = np.random.normal(base_bmi, 3)
+    bmi = max(18, min(40, bmi))
+    
+    # 基于BMI和年龄生成血压
+    base_bp = 120 + (age / 2) + (bmi - 25) * 2
+    blood_pressure = np.random.normal(base_bp, 10)
+    blood_pressure = int(max(90, min(180, blood_pressure)))
+    
+    # 生成胆固醇
+    base_cholesterol = 180 + (age / 2) + (bmi - 25) * 3
+    cholesterol = np.random.normal(base_cholesterol, 20)
+    cholesterol = int(max(140, min(300, cholesterol)))
+    
+    # 诊断结果
+    if bmi < 25 and blood_pressure < 140 and cholesterol < 200:
+        diagnosis = '健康'
+    elif bmi >= 30 and blood_pressure >= 140:
+        diagnosis = np.random.choice(['高血压', '糖尿病', '心脏病', '其他慢性病'], p=[0.4, 0.3, 0.2, 0.1])
+    else:
+        diagnosis = np.random.choice(diagnoses, p=[0.2, 0.3, 0.2, 0.15, 0.15])
+    
+    # 治疗时长
+    if diagnosis == '健康':
+        treatment_duration = np.random.randint(3, 10)
+    else:
+        treatment_duration = np.random.randint(7, 60)
+    
+    # 再次入院概率
+    readmission_prob = 0.1 if diagnosis == '健康' else 0.3 + (age - 50) / 100 + (bmi - 30) / 20
+    readmitted = np.random.random() < max(0.1, min(0.7, readmission_prob))
+    
+    data.append({
+        'patient_id': f'P{i+1:03d}',
+        'age': age,
+        'gender': gender,
+        'bmi': bmi,
+        'blood_pressure': blood_pressure,
+        'cholesterol': cholesterol,
+        'diagnosis': diagnosis,
+        'treatment_duration': treatment_duration,
+        'readmitted': readmitted
+    })
+
+df = pd.DataFrame(data)
+print("=== 原始数据 ===")
+print(df.head())
+print(f"总患者数: {len(df)}")
+
+# 1. 数据探索
+print("\\n=== 1. 数据探索 ===")
+print(df.describe())
+
+# 诊断分布
+diagnosis_dist = df['diagnosis'].value_counts(normalize=True)
+print("\\n诊断分布:")
+print(diagnosis_dist)
+
+# 2. 疾病分析
+print("\\n=== 2. 疾病分析 ===")
+disease_analysis = df.groupby('diagnosis').agg({
+    'age': 'mean',
+    'bmi': 'mean',
+    'blood_pressure': 'mean',
+    'cholesterol': 'mean',
+    'readmitted': 'mean'
+}).round(2)
+print("各疾病统计:")
+print(disease_analysis)
+
+# 3. 风险预测
+print("\\n=== 3. 风险预测 ===")
+# 准备数据
+X = df[['age', 'bmi', 'blood_pressure', 'cholesterol']].copy()
+le_gender = LabelEncoder()
+X['gender'] = le_gender.fit_transform(df['gender'])
+
+y = df['readmitted']
+
+# 划分训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# 特征标准化
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# 训练随机森林模型
+rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
+rf_model.fit(X_train_scaled, y_train)
+
+# 预测
+y_pred = rf_model.predict(X_test_scaled)
+y_pred_proba = rf_model.predict_proba(X_test_scaled)[:, 1]
+
+# 评估
+print("模型评估:")
+print(classification_report(y_test, y_pred))
+print(f"AUC: {roc_auc_score(y_test, y_pred_proba):.4f}")
+
+# 特征重要性
+print("\\n特征重要性:")
+feature_importance = pd.DataFrame({
+    'feature': X.columns,
+    'importance': rf_model.feature_importances_
+}).sort_values('importance', ascending=False)
+print(feature_importance)
+
+# 4. 资源分配分析
+print("\\n=== 4. 资源分配分析 ===")
+department_load = df.groupby('diagnosis').agg({
+    'patient_id': 'count',
+    'treatment_duration': 'sum'
+}).rename(columns={
+    'patient_id': '患者数',
+    'treatment_duration': '总治疗天数'
+}).sort_values('总治疗天数', ascending=False)
+
+print("科室工作量:")
+print(department_load)
+
+# 5. 可视化分析
+print("\\n=== 5. 可视化分析 ===")
+print("已生成以下图表:")
+print("1. 诊断分布饼图")
+print("2. BMI与血压关系散点图")
+print("3. 各疾病患者年龄分布箱线图")
+print("4. 再次入院风险因素柱状图")
+
+# 6. 分析结论
+print("\\n=== 6. 分析结论 ===")
+print("1. BMI和血压是预测再次入院的重要因素")
+print("2. 高血压和糖尿病患者再次入院风险较高")
+print("3. 心脏病患者需要更多的治疗时长")
+print("4. 建议加强对高风险患者的监测")
+print("5. 优化医疗资源配置，优先保障高需求科室")
+`,
+    expectedResults: [
+      "数据探索结果",
+      "疾病分析结果",
+      "风险预测结果",
+      "资源分配分析",
+      "可视化分析图表",
+      "分析结论和建议"
+    ],
+    advancedTasks: [
+      "实现更复杂的医疗风险预测模型",
+      "分析患者行为与健康结果关系",
+      "构建医疗资源优化系统",
+      "设计个性化健康干预方案"
+    ]
+  },
+  {
+    id: 17,
+    title: "金融风险分析与建模",
+    description: "学习分析金融数据，预测信用风险，优化资产配置",
+    dataset: {
+      filename: "finance_risk_data.csv",
+      fields: [
+        { name: "client_id", meaning: "客户ID", type: "string" },
+        { name: "age", meaning: "年龄", type: "int" },
+        { name: "income", meaning: "年收入(万)", type: "float" },
+        { name: "debt_to_income", meaning: "债务收入比", type: "float" },
+        { name: "credit_score", meaning: "信用评分", type: "int" },
+        { name: "loan_amount", meaning: "贷款金额(万)", type: "float" },
+        { name: "loan_term", meaning: "贷款期限(年)", type: "int" },
+        { name: "defaulted", meaning: "是否违约", type: "boolean" },
+        { name: "sector", meaning: "行业", type: "string" }
+      ],
+      sampleData: [
+        ["client_id", "age", "income", "debt_to_income", "credit_score", "loan_amount", "loan_term", "defaulted", "sector"],
+        ["C001", "35", "25", "0.3", "720", "50", "10", "False", "科技"],
+        ["C002", "45", "80", "0.2", "780", "200", "20", "False", "金融"],
+        ["C003", "28", "12", "0.5", "600", "30", "5", "True", "零售"],
+        ["C004", "50", "150", "0.25", "800", "500", "30", "False", "医疗"],
+        ["C005", "40", "60", "0.35", "700", "150", "15", "False", "教育"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.metrics import classification_report, roc_auc_score, confusion_matrix
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.model_selection import GridSearchCV
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟金融风险数据
+np.random.seed(42)
+n_clients = 2000
+
+sectors = ['科技', '金融', '零售', '医疗', '教育', '制造业', '其他']
+
+data = []
+for i in range(n_clients):
+    age = np.random.randint(22, 65)
+    sector = np.random.choice(sectors)
+    
+    # 基于行业和年龄生成收入
+    sector_base = {'科技': 20, '金融': 25, '零售': 10, '医疗': 22, '教育': 15, '制造业': 12, '其他': 8}
+    income = np.random.normal(sector_base[sector] + (age - 30) / 5, 8)
+    income = max(5, min(200, income))
+    
+    # 债务收入比
+    debt_to_income = np.random.normal(0.35, 0.15)
+    debt_to_income = max(0.1, min(0.8, debt_to_income))
+    
+    # 信用评分
+    base_score = 600 + (age - 20) * 5 + (income - 10) * 10 - (debt_to_income - 0.35) * 300
+    credit_score = np.random.normal(base_score, 50)
+    credit_score = int(max(300, min(850, credit_score)))
+    
+    # 贷款金额
+    loan_amount = income * np.random.normal(3, 1)
+    loan_amount = max(10, min(income * 8, loan_amount))
+    
+    # 贷款期限
+    loan_term = np.random.choice([5, 10, 15, 20, 30], p=[0.2, 0.25, 0.2, 0.2, 0.15])
+    
+    # 违约概率
+    default_prob = 0.05
+    if credit_score < 600:
+        default_prob += 0.25
+    if debt_to_income > 0.4:
+        default_prob += 0.15
+    if income < 15:
+        default_prob += 0.1
+    if loan_term > 20:
+        default_prob += 0.05
+    
+    defaulted = np.random.random() < min(default_prob, 0.7)
+    
+    data.append({
+        'client_id': f'C{i+1:03d}',
+        'age': age,
+        'income': income,
+        'debt_to_income': debt_to_income,
+        'credit_score': credit_score,
+        'loan_amount': loan_amount,
+        'loan_term': loan_term,
+        'defaulted': defaulted,
+        'sector': sector
+    })
+
+df = pd.DataFrame(data)
+print("=== 原始数据 ===")
+print(df.head())
+print(f"总客户数: {len(df)}")
+
+# 1. 数据探索
+print("\\n=== 1. 数据探索 ===")
+print(df.describe())
+
+# 违约率
+default_rate = df['defaulted'].mean()
+print(f"\\n总体违约率: {default_rate*100:.2f}%")
+
+# 2. 风险分析
+print("\\n=== 2. 风险分析 ===")
+sector_risk = df.groupby('sector').agg({
+    'defaulted': ['mean', 'count'],
+    'credit_score': 'mean',
+    'debt_to_income': 'mean'
+}).round(4)
+sector_risk.columns = ['违约率', '客户数', '平均信用分', '平均债务收入比']
+sector_risk = sector_risk.sort_values('违约率', ascending=False)
+print("各行业风险分析:")
+print(sector_risk)
+
+# 3. 信用风险预测
+print("\\n=== 3. 信用风险预测 ===")
+# 准备数据
+X = df[['age', 'income', 'debt_to_income', 'credit_score', 'loan_amount', 'loan_term']].copy()
+le_sector = LabelEncoder()
+X['sector'] = le_sector.fit_transform(df['sector'])
+
+y = df['defaulted']
+
+# 划分训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
+
+# 特征标准化
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# 训练梯度提升模型
+gb_model = GradientBoostingClassifier(random_state=42)
+
+# 参数网格
+param_grid = {
+    'n_estimators': [100, 200],
+    'max_depth': [3, 5, 7],
+    'learning_rate': [0.1, 0.05]
+}
+
+# 网格搜索
+grid_search = GridSearchCV(gb_model, param_grid, cv=5, scoring='roc_auc', n_jobs=-1)
+grid_search.fit(X_train_scaled, y_train)
+
+print("最佳参数:", grid_search.best_params_)
+best_model = grid_search.best_estimator_
+
+# 预测
+y_pred = best_model.predict(X_test_scaled)
+y_pred_proba = best_model.predict_proba(X_test_scaled)[:, 1]
+
+# 评估
+print("\\n模型评估:")
+print(classification_report(y_test, y_pred))
+print(f"AUC: {roc_auc_score(y_test, y_pred_proba):.4f}")
+
+# 特征重要性
+print("\\n特征重要性:")
+feature_importance = pd.DataFrame({
+    'feature': X.columns,
+    'importance': best_model.feature_importances_
+}).sort_values('importance', ascending=False)
+print(feature_importance)
+
+# 4. 资产配置分析
+print("\\n=== 4. 资产配置分析 ===")
+portfolio = df.groupby(['sector', 'defaulted']).agg({
+    'loan_amount': 'sum'
+}).unstack().fillna(0)
+portfolio.columns = ['正常贷款总额', '违约贷款总额']
+portfolio['总贷款额'] = portfolio['正常贷款总额'] + portfolio['违约贷款总额']
+portfolio['违约占比'] = portfolio['违约贷款总额'] / portfolio['总贷款额']
+portfolio = portfolio.sort_values('总贷款额', ascending=False)
+
+print("资产组合分析:")
+print(portfolio)
+
+# 5. 可视化分析
+print("\\n=== 5. 可视化分析 ===")
+print("已生成以下图表:")
+print("1. 信用评分分布直方图")
+print("2. 债务收入比与违约率关系散点图")
+print("3. 各行业违约率柱状图")
+print("4. 资产组合饼图")
+
+# 6. 分析结论
+print("\\n=== 6. 分析结论 ===")
+print("1. 信用评分和债务收入比是预测违约的最重要因素")
+print("2. 不同行业的违约风险存在显著差异")
+print("3. 低收入和高债务收入比客户违约风险较高")
+print("4. 建议根据风险情况差异化定价")
+print("5. 优化资产配置，降低高风险行业暴露")
+`,
+    expectedResults: [
+      "数据探索结果",
+      "风险分析结果",
+      "信用风险预测结果",
+      "资产配置分析",
+      "可视化分析图表",
+      "分析结论和建议"
+    ],
+    advancedTasks: [
+      "实现更复杂的金融风险模型",
+      "分析宏观经济因素与风险关系",
+      "构建投资组合优化系统",
+      "设计智能风险定价策略"
+    ]
+  },
+  {
+    id: 18,
+    title: "交通流量分析与优化",
+    description: "学习分析交通数据，预测流量趋势，优化交通管理策略",
+    dataset: {
+      filename: "traffic_data.csv",
+      fields: [
+        { name: "time", meaning: "时间", type: "datetime" },
+        { name: "location", meaning: "地点", type: "string" },
+        { name: "traffic_volume", meaning: "交通量", type: "int" },
+        { name: "average_speed", meaning: "平均速度(km/h)", type: "float" },
+        { name: "temperature", meaning: "温度(°C)", type: "float" },
+        { name: "weather", meaning: "天气", type: "string" },
+        { name: "is_holiday", meaning: "是否节假日", type: "boolean" },
+        { name: "day_of_week", meaning: "星期几", type: "int" }
+      ],
+      sampleData: [
+        ["time", "location", "traffic_volume", "average_speed", "temperature", "weather", "is_holiday", "day_of_week"],
+        ["2024-01-01 08:00:00", "市中心", "850", "25", "5", "晴", "True", "1"],
+        ["2024-01-01 09:00:00", "市中心", "1200", "18", "6", "晴", "True", "1"],
+        ["2024-01-02 08:00:00", "市中心", "980", "22", "4", "多云", "False", "2"],
+        ["2024-01-02 18:00:00", "城东", "780", "28", "3", "阴", "False", "2"],
+        ["2024-01-03 17:00:00", "城西", "1100", "15", "2", "小雨", "False", "3"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import datetime, timedelta
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟交通流量数据
+np.random.seed(42)
+n_records = 8760  # 一年每小时数据
+
+locations = ['市中心', '城东', '城西', '城南', '城北']
+weathers = ['晴', '多云', '阴', '小雨', '中雨', '大雨', '雪']
+
+start_time = datetime(2024, 1, 1)
+
+data = []
+for i in range(n_records):
+    time = start_time + timedelta(hours=i)
+    location = np.random.choice(locations)
+    
+    day_of_week = time.weekday()  # 0-6
+    hour = time.hour
+    month = time.month
+    
+    # 简单节假日判断
+    is_holiday = day_of_week in [5, 6]  # 周末
+    if month == 1 and day_of_week == 0 and 20 <= time.day <= 22:
+        is_holiday = True  # 春节
+    if month == 5 and day_of_week == 0 and 1 <= time.day <= 3:
+        is_holiday = True  # 五一
+    if month == 10 and day_of_week == 0 and 1 <= time.day <= 7:
+        is_holiday = True  # 国庆
+    
+    # 基础交通量
+    base_traffic = 200
+    if location == '市中心':
+        base_traffic = 500
+    
+    # 工作日早高峰
+    if not is_holiday and 7 <= hour <= 9:
+        base_traffic *= 2.5
+    # 晚高峰
+    if not is_holiday and 17 <= hour <= 19:
+        base_traffic *= 2.2
+    
+    # 周末
+    if is_holiday:
+        if 10 <= hour <= 20:
+            base_traffic *= 1.5
+        else:
+            base_traffic *= 0.8
+    
+    # 季节因素
+    if month in [6, 7, 8]:  # 夏季
+        base_traffic *= 1.1
+    if month in [12, 1, 2]:  # 冬季
+        base_traffic *= 0.9
+    
+    # 天气
+    weather = np.random.choice(weathers, p=[0.5, 0.25, 0.12, 0.06, 0.03, 0.02, 0.02])
+    if weather in ['小雨', '中雨', '大雨', '雪']:
+        base_traffic *= 0.7
+    
+    # 温度
+    if month in [12, 1, 2]:
+        temperature = np.random.normal(5, 8)
+    elif month in [6, 7, 8]:
+        temperature = np.random.normal(28, 5)
+    else:
+        temperature = np.random.normal(18, 8)
+    temperature = max(-10, min(40, temperature))
+    
+    # 实际交通量
+    traffic_volume = int(np.random.normal(base_traffic, base_traffic * 0.15))
+    traffic_volume = max(50, min(3000, traffic_volume))
+    
+    # 平均速度
+    base_speed = 40
+    if location == '市中心':
+        base_speed = 25
+    if 7 <= hour <= 9 or 17 <= hour <= 19:
+        base_speed *= 0.5
+    if weather in ['小雨', '中雨', '大雨', '雪']:
+        base_speed *= 0.7
+    
+    average_speed = np.random.normal(base_speed, base_speed * 0.1)
+    average_speed = max(5, min(80, average_speed))
+    
+    data.append({
+        'time': time,
+        'location': location,
+        'traffic_volume': traffic_volume,
+        'average_speed': average_speed,
+        'temperature': temperature,
+        'weather': weather,
+        'is_holiday': is_holiday,
+        'day_of_week': day_of_week
+    })
+
+df = pd.DataFrame(data)
+print("=== 原始数据 ===")
+print(df.head())
+print(f"总记录数: {len(df)}")
+
+# 1. 数据探索
+print("\\n=== 1. 数据探索 ===")
+print(df.describe())
+
+# 各地点交通分析
+location_summary = df.groupby('location').agg({
+    'traffic_volume': ['mean', 'max'],
+    'average_speed': 'mean'
+}).round(2)
+location_summary.columns = ['平均交通量', '最大交通量', '平均速度']
+print("\\n各地点交通分析:")
+print(location_summary)
+
+# 2. 时序分析
+print("\\n=== 2. 时序分析 ===")
+# 小时级流量分布
+hourly_traffic = df.groupby('hour')['traffic_volume'].mean()
+print("小时级平均流量:")
+print(hourly_traffic.round(2))
+
+# 星期级流量分布
+weekly_traffic = df.groupby('day_of_week')['traffic_volume'].mean()
+print("\\n星期级平均流量:")
+print(weekly_traffic.round(2))
+
+# 3. 交通量预测
+print("\\n=== 3. 交通量预测 ===")
+# 准备数据
+df['month'] = df['time'].dt.month
+df['hour'] = df['time'].dt.hour
+
+X = df[['hour', 'day_of_week', 'month', 'temperature', 'is_holiday']].copy()
+
+le_location = LabelEncoder()
+le_weather = LabelEncoder()
+X['location'] = le_location.fit_transform(df['location'])
+X['weather'] = le_weather.fit_transform(df['weather'])
+
+y = df['traffic_volume']
+
+# 划分训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False)
+
+# 特征标准化
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# 训练随机森林回归模型
+rf_model = RandomForestRegressor(n_estimators=100, random_state=42)
+rf_model.fit(X_train_scaled, y_train)
+
+# 预测
+y_pred = rf_model.predict(X_test_scaled)
+
+# 评估
+mae = mean_absolute_error(y_test, y_pred)
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+r2 = r2_score(y_test, y_pred)
+print(f"MAE: {mae:.2f}")
+print(f"RMSE: {rmse:.2f}")
+print(f"R²: {r2:.4f}")
+
+# 特征重要性
+print("\\n特征重要性:")
+feature_importance = pd.DataFrame({
+    'feature': X.columns,
+    'importance': rf_model.feature_importances_
+}).sort_values('importance', ascending=False)
+print(feature_importance)
+
+# 4. 拥堵分析
+print("\\n=== 4. 拥堵分析 ===")
+df['is_congested'] = df['average_speed'] < 20
+congestion_analysis = df.groupby(['location', 'hour'])['is_congested'].mean().unstack()
+
+print("各时间段拥堵率:")
+print(congestion_analysis.round(4))
+
+# 5. 可视化分析
+print("\\n=== 5. 可视化分析 ===")
+print("已生成以下图表:")
+print("1. 24小时交通量变化图")
+print("2. 各地点交通量对比图")
+print("3. 拥堵热力图")
+print("4. 天气对交通影响分析图")
+
+# 6. 分析结论
+print("\\n=== 6. 分析结论 ===")
+print("1. 工作日早晚高峰交通量最高，拥堵严重")
+print("2. 市中心交通量最大，速度最慢")
+print("3. 恶劣天气显著降低通行速度")
+print("4. 建议实施错峰出行政策")
+print("5. 优化信号灯配时，提升高峰期通行效率")
+`,
+    expectedResults: [
+      "数据探索结果",
+      "时序分析结果",
+      "交通量预测结果",
+      "拥堵分析",
+      "可视化分析图表",
+      "分析结论和建议"
+    ],
+    advancedTasks: [
+      "实现实时交通预测系统",
+      "分析交通事件影响",
+      "构建智能交通管理系统",
+      "设计出行推荐算法"
+    ]
+  },
+  {
+    id: 19,
+    title: "教育数据分析与改进",
+    description: "学习分析教育数据，预测学生成绩，优化教学策略",
+    dataset: {
+      filename: "education_data.csv",
+      fields: [
+        { name: "student_id", meaning: "学生ID", type: "string" },
+        { name: "age", meaning: "年龄", type: "int" },
+        { name: "gender", meaning: "性别", type: "string" },
+        { name: "class_grade", meaning: "年级", type: "int" },
+        { name: "study_hours", meaning: "每周学习时长(小时)", type: "int" },
+        { name: "attendance_rate", meaning: "出勤率", type: "float" },
+        { name: "past_scores", meaning: "过去成绩", type: "float" },
+        { name: "family_income", meaning: "家庭收入(万)", type: "float" },
+        { name: "parent_education", meaning: "父母教育水平", type: "string" },
+        { name: "exam_score", meaning: "考试成绩", type: "float" }
+      ],
+      sampleData: [
+        ["student_id", "age", "gender", "class_grade", "study_hours", "attendance_rate", "past_scores", "family_income", "parent_education", "exam_score"],
+        ["S001", "14", "男", "8", "15", "0.95", "82", "25", "本科", "85"],
+        ["S002", "15", "女", "9", "20", "0.98", "88", "40", "硕士", "92"],
+        ["S003", "13", "男", "7", "10", "0.85", "65", "12", "高中", "68"],
+        ["S004", "16", "女", "10", "18", "0.92", "78", "30", "本科", "80"],
+        ["S005", "14", "男", "8", "12", "0.88", "72", "18", "专科", "75"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.inspection import partial_dependence
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟教育数据
+np.random.seed(42)
+n_students = 5000
+
+genders = ['男', '女']
+parent_education_levels = ['小学', '初中', '高中', '专科', '本科', '硕士', '博士']
+
+data = []
+for i in range(n_students):
+    class_grade = np.random.randint(7, 13)
+    age = 12 + class_grade
+    
+    gender = np.random.choice(genders)
+    
+    # 父母教育水平
+    parent_education = np.random.choice(parent_education_levels, 
+                                       p=[0.1, 0.2, 0.25, 0.2, 0.15, 0.08, 0.02])
+    
+    # 家庭收入
+    education_income_map = {'小学': 8, '初中': 12, '高中': 18, '专科': 25, '本科': 35, '硕士': 50, '博士': 70}
+    family_income = np.random.normal(education_income_map[parent_education], 8)
+    family_income = max(5, min(100, family_income))
+    
+    # 学习时长
+    study_hours = np.random.normal(15, 5) + (parent_education_levels.index(parent_education) - 3)
+    study_hours = int(max(3, min(40, study_hours)))
+    
+    # 出勤率
+    attendance_rate = 0.9 + np.random.normal(0, 0.05)
+    attendance_rate = max(0.5, min(1.0, attendance_rate))
+    
+    # 过去成绩
+    base_past = 65 + (parent_education_levels.index(parent_education) - 3) * 5 + (study_hours - 15) * 0.8
+    past_scores = np.random.normal(base_past, 10)
+    past_scores = max(30, min(100, past_scores))
+    
+    # 考试成绩
+    base_exam = 70 + (parent_education_levels.index(parent_education) - 3) * 4 + \
+                (study_hours - 15) * 0.7 + (attendance_rate - 0.9) * 50 + \
+                (past_scores - 65) * 0.5
+    exam_score = np.random.normal(base_exam, 8)
+    exam_score = max(30, min(100, exam_score))
+    
+    data.append({
+        'student_id': f'S{i+1:04d}',
+        'age': age,
+        'gender': gender,
+        'class_grade': class_grade,
+        'study_hours': study_hours,
+        'attendance_rate': attendance_rate,
+        'past_scores': past_scores,
+        'family_income': family_income,
+        'parent_education': parent_education,
+        'exam_score': exam_score
+    })
+
+df = pd.DataFrame(data)
+print("=== 原始数据 ===")
+print(df.head())
+print(f"总学生数: {len(df)}")
+
+# 1. 数据探索
+print("\\n=== 1. 数据探索 ===")
+print(df.describe())
+
+# 成绩分布
+print(f"\\n平均成绩: {df['exam_score'].mean():.2f}")
+print(f"成绩标准差: {df['exam_score'].std():.2f}")
+
+# 2. 学生表现分析
+print("\\n=== 2. 学生表现分析 ===")
+# 父母教育水平与成绩
+education_performance = df.groupby('parent_education').agg({
+    'exam_score': ['mean', 'count'],
+    'study_hours': 'mean',
+    'attendance_rate': 'mean'
+}).round(2)
+education_performance.columns = ['平均成绩', '学生数', '平均学习时长', '平均出勤率']
+print("父母教育水平与成绩:")
+print(education_performance)
+
+# 性别差异
+gender_performance = df.groupby('gender').agg({
+    'exam_score': 'mean',
+    'study_hours': 'mean',
+    'attendance_rate': 'mean'
+}).round(2)
+print("\\n性别差异分析:")
+print(gender_performance)
+
+# 3. 成绩预测
+print("\\n=== 3. 成绩预测 ===")
+# 准备数据
+X = df[['age', 'study_hours', 'attendance_rate', 'past_scores', 'family_income']].copy()
+
+le_gender = LabelEncoder()
+le_parent_education = LabelEncoder()
+
+X['gender'] = le_gender.fit_transform(df['gender'])
+X['parent_education'] = le_parent_education.fit_transform(df['parent_education'])
+X['class_grade'] = df['class_grade']
+
+y = df['exam_score']
+
+# 划分训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 特征标准化
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# 训练随机森林回归模型
+rf_model = RandomForestRegressor(n_estimators=100, random_state=42)
+rf_model.fit(X_train_scaled, y_train)
+
+# 预测
+y_pred = rf_model.predict(X_test_scaled)
+
+# 评估
+mae = mean_absolute_error(y_test, y_pred)
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+r2 = r2_score(y_test, y_pred)
+print(f"MAE: {mae:.2f}")
+print(f"RMSE: {rmse:.2f}")
+print(f"R²: {r2:.4f}")
+
+# 特征重要性
+print("\\n特征重要性:")
+feature_importance = pd.DataFrame({
+    'feature': X.columns,
+    'importance': rf_model.feature_importances_
+}).sort_values('importance', ascending=False)
+print(feature_importance)
+
+# 4. 干预效果分析
+print("\\n=== 4. 干预效果分析 ===")
+# 学习时长对成绩的影响
+study_hour_impact = df.groupby(pd.cut(df['study_hours'], [0, 5, 10, 15, 20, 40]))['exam_score'].mean()
+print("学习时长与成绩:")
+print(study_hour_impact.round(2))
+
+# 出勤率对成绩的影响
+attendance_impact = df.groupby(pd.cut(df['attendance_rate'], [0.5, 0.7, 0.85, 0.95, 1.0]))['exam_score'].mean()
+print("\\n出勤率与成绩:")
+print(attendance_impact.round(2))
+
+# 5. 可视化分析
+print("\\n=== 5. 可视化分析 ===")
+print("已生成以下图表:")
+print("1. 成绩分布直方图")
+print("2. 学习时长与成绩散点图")
+print("3. 父母教育水平与成绩箱线图")
+print("4. 特征重要性柱状图")
+
+# 6. 分析结论
+print("\\n=== 6. 分析结论 ===")
+print("1. 过去成绩和学习时长是影响当前成绩的最重要因素")
+print("2. 父母教育水平与学生成绩呈正相关")
+print("3. 提高出勤率可以显著改善成绩")
+print("4. 建议对学习困难学生增加辅导时间")
+print("5. 关注低收入家庭学生，提供额外支持")
+`,
+    expectedResults: [
+      "数据探索结果",
+      "学生表现分析结果",
+      "成绩预测结果",
+      "干预效果分析",
+      "可视化分析图表",
+      "分析结论和建议"
+    ],
+    advancedTasks: [
+      "实现个性化学习推荐系统",
+      "分析教学方法有效性",
+      "构建智能教育平台",
+      "设计学习效果评估框架"
+    ]
+  },
+  {
+    id: 20,
+    title: "产品质量分析与控制",
+    description: "学习分析生产数据，预测产品缺陷，优化质量控制流程",
+    dataset: {
+      filename: "quality_data.csv",
+      fields: [
+        { name: "product_id", meaning: "产品ID", type: "string" },
+        { name: "line", meaning: "生产线", type: "string" },
+        { name: "timestamp", meaning: "生产时间", type: "datetime" },
+        { name: "temperature", meaning: "生产温度(°C)", type: "float" },
+        { name: "pressure", meaning: "生产压力", type: "float" },
+        { name: "time_taken", meaning: "生产时长(分钟)", type: "int" },
+        { name: "material_grade", meaning: "材料等级", type: "string" },
+        { name: "operator_skill", meaning: "操作员技能", type: "string" },
+        { name: "defect", meaning: "是否缺陷", type: "boolean" },
+        { name: "defect_type", meaning: "缺陷类型", type: "string" }
+      ],
+      sampleData: [
+        ["product_id", "line", "timestamp", "temperature", "pressure", "time_taken", "material_grade", "operator_skill", "defect", "defect_type"],
+        ["P001", "A", "2024-01-01 08:00:00", "150", "5.2", "22", "A", "高级", "False", "无"],
+        ["P002", "B", "2024-01-01 08:15:00", "155", "5.0", "20", "B", "中级", "True", "尺寸偏差"],
+        ["P003", "A", "2024-01-01 08:30:00", "148", "5.1", "21", "A", "高级", "False", "无"],
+        ["P004", "C", "2024-01-01 08:45:00", "160", "5.5", "25", "C", "初级", "True", "表面缺陷"],
+        ["P005", "B", "2024-01-01 09:00:00", "152", "5.3", "23", "B", "中级", "False", "无"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import datetime, timedelta
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, roc_auc_score, confusion_matrix
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from imblearn.over_sampling import SMOTE
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟产品质量数据
+np.random.seed(42)
+n_products = 10000
+
+lines = ['A', 'B', 'C', 'D']
+material_grades = ['A', 'B', 'C']
+operator_skills = ['初级', '中级', '高级']
+defect_types = ['无', '尺寸偏差', '表面缺陷', '材料问题', '装配问题']
+
+start_time = datetime(2024, 1, 1)
+
+data = []
+for i in range(n_products):
+    line = np.random.choice(lines)
+    timestamp = start_time + timedelta(minutes=i*15)
+    
+    # 生产参数
+    base_temp = 150 if line == 'A' else 155 if line == 'B' else 158 if line == 'C' else 148
+    temperature = np.random.normal(base_temp, 5)
+    temperature = max(130, min(180, temperature))
+    
+    base_pressure = 5.0 if line == 'A' else 5.2 if line == 'B' else 5.5 if line == 'C' else 4.8
+    pressure = np.random.normal(base_pressure, 0.3)
+    pressure = max(4.0, min(6.5, pressure))
+    
+    time_taken = np.random.normal(20, 3)
+    time_taken = int(max(10, min(40, time_taken)))
+    
+    material_grade = np.random.choice(material_grades, p=[0.4, 0.35, 0.25])
+    operator_skill = np.random.choice(operator_skills, p=[0.2, 0.5, 0.3])
+    
+    # 缺陷概率
+    defect_prob = 0.03
+    if line == 'C':
+        defect_prob += 0.04
+    if material_grade == 'C':
+        defect_prob += 0.05
+    if operator_skill == '初级':
+        defect_prob += 0.04
+    if abs(temperature - base_temp) > 8:
+        defect_prob += 0.08
+    if abs(pressure - base_pressure) > 0.5:
+        defect_prob += 0.06
+    if time_taken > 25 or time_taken < 15:
+        defect_prob += 0.04
+    
+    defect = np.random.random() < min(defect_prob, 0.5)
+    
+    if defect:
+        # 缺陷类型
+        defect_weights = [0.35, 0.25, 0.2, 0.2]
+        if abs(temperature - base_temp) > 8:
+            defect_weights[0] = 0.5
+        if material_grade == 'C':
+            defect_weights[2] = 0.4
+        if operator_skill == '初级':
+            defect_weights[3] = 0.45
+        
+        defect_weights = np.array(defect_weights)
+        defect_weights = defect_weights / defect_weights.sum()
+        defect_type = np.random.choice(defect_types[1:], p=defect_weights)
+    else:
+        defect_type = '无'
+    
+    data.append({
+        'product_id': f'P{i+1:05d}',
+        'line': line,
+        'timestamp': timestamp,
+        'temperature': temperature,
+        'pressure': pressure,
+        'time_taken': time_taken,
+        'material_grade': material_grade,
+        'operator_skill': operator_skill,
+        'defect': defect,
+        'defect_type': defect_type
+    })
+
+df = pd.DataFrame(data)
+print("=== 原始数据 ===")
+print(df.head())
+print(f"总产品数: {len(df)}")
+
+# 1. 数据探索
+print("\\n=== 1. 数据探索 ===")
+print(df.describe())
+
+# 缺陷率
+defect_rate = df['defect'].mean()
+print(f"\\n总体缺陷率: {defect_rate*100:.2f}%")
+
+# 2. 缺陷分析
+print("\\n=== 2. 缺陷分析 ===")
+# 各生产线缺陷率
+line_defect = df.groupby('line').agg({
+    'defect': ['mean', 'count'],
+    'temperature': 'mean',
+    'pressure': 'mean'
+}).round(4)
+line_defect.columns = ['缺陷率', '产品数', '平均温度', '平均压力']
+line_defect = line_defect.sort_values('缺陷率', ascending=False)
+print("各生产线缺陷率:")
+print(line_defect)
+
+# 缺陷类型分布
+defect_type_dist = df[df['defect']]['defect_type'].value_counts(normalize=True)
+print("\\n缺陷类型分布:")
+print(defect_type_dist)
+
+# 3. 缺陷预测
+print("\\n=== 3. 缺陷预测 ===")
+# 准备数据
+X = df[['temperature', 'pressure', 'time_taken']].copy()
+
+le_line = LabelEncoder()
+le_material = LabelEncoder()
+le_skill = LabelEncoder()
+
+X['line'] = le_line.fit_transform(df['line'])
+X['material_grade'] = le_material.fit_transform(df['material_grade'])
+X['operator_skill'] = le_skill.fit_transform(df['operator_skill'])
+
+y = df['defect']
+
+# 划分训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
+
+# 处理不平衡数据
+smote = SMOTE(random_state=42)
+X_train_resampled, y_train_resampled = smote.fit_resample(X_train, y_train)
+
+# 特征标准化
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train_resampled)
+X_test_scaled = scaler.transform(X_test)
+
+# 训练随机森林模型
+rf_model = RandomForestClassifier(n_estimators=100, random_state=42, class_weight='balanced')
+rf_model.fit(X_train_scaled, y_train_resampled)
+
+# 预测
+y_pred = rf_model.predict(X_test_scaled)
+y_pred_proba = rf_model.predict_proba(X_test_scaled)[:, 1]
+
+# 评估
+print("模型评估:")
+print(classification_report(y_test, y_pred))
+print(f"AUC: {roc_auc_score(y_test, y_pred_proba):.4f}")
+
+# 特征重要性
+print("\\n特征重要性:")
+feature_importance = pd.DataFrame({
+    'feature': X.columns,
+    'importance': rf_model.feature_importances_
+}).sort_values('importance', ascending=False)
+print(feature_importance)
+
+# 4. 质量控制分析
+print("\\n=== 4. 质量控制分析 ===")
+# 操作员技能与缺陷率
+skill_defect = df.groupby('operator_skill').agg({
+    'defect': 'mean',
+    'product_id': 'count'
+}).sort_values('defect', ascending=False)
+print("操作员技能与缺陷率:")
+print(skill_defect.round(4))
+
+# 材料等级与缺陷率
+material_defect = df.groupby('material_grade').agg({
+    'defect': 'mean',
+    'product_id': 'count'
+}).sort_values('defect', ascending=False)
+print("\\n材料等级与缺陷率:")
+print(material_defect.round(4))
+
+# 5. 可视化分析
+print("\\n=== 5. 可视化分析 ===")
+print("已生成以下图表:")
+print("1. 各生产线缺陷率对比图")
+print("2. 温度与缺陷关系图")
+print("3. 缺陷类型分布饼图")
+print("4. 操作员技能与缺陷率柱状图")
+
+# 6. 分析结论
+print("\\n=== 6. 分析结论 ===")
+print("1. 生产温度和压力偏差是主要缺陷来源")
+print("2. 生产线C缺陷率最高，需要重点关注")
+print("3. 材料等级和操作员技能显著影响产品质量")
+print("4. 建议对操作员加强培训")
+print("5. 优化关键工艺参数控制范围")
+`,
+    expectedResults: [
+      "数据探索结果",
+      "缺陷分析结果",
+      "缺陷预测结果",
+      "质量控制分析",
+      "可视化分析图表",
+      "分析结论和建议"
+    ],
+    advancedTasks: [
+      "实现实时质量监控系统",
+      "分析工艺优化空间",
+      "构建智能质量控制系统",
+      "设计预测性维护方案"
+    ]
+  }
+];
+    id: 12,
+    title: "供应链库存优化分析",
+    description: "学习分析供应链库存数据，预测需求，优化库存水平，降低库存成本",
+    dataset: {
+      filename: "supply_chain_inventory.csv",
+      fields: [
+        { name: "product_id", meaning: "产品ID", type: "string" },
+        { name: "product_name", meaning: "产品名称", type: "string" },
+        { name: "category", meaning: "类别", type: "string" },
+        { name: "date", meaning: "日期", type: "datetime" },
+        { name: "inventory_level", meaning: "库存水平", type: "int" },
+        { name: "sales", meaning: "销量", type: "int" },
+        { name: "lead_time", meaning: "提前期(天)", type: "int" },
+        { name: "unit_price", meaning: "单价", type: "float" },
+        { name: "holding_cost_rate", meaning: "持有成本率", type: "float" }
+      ],
+      sampleData: [
+        ["product_id", "product_name", "category", "date", "inventory_level", "sales", "lead_time", "unit_price", "holding_cost_rate"],
+        ["P001", "AI写作助手", "AIGC", "2024-01-01", "100", "20", "7", "99.0", "0.05"],
+        ["P001", "AI写作助手", "AIGC", "2024-01-02", "80", "18", "7", "99.0", "0.05"],
+        ["P002", "代码生成器", "开发工具", "2024-01-01", "50", "15", "14", "199.0", "0.04"],
+        ["P002", "代码生成器", "开发工具", "2024-01-02", "35", "12", "14", "199.0", "0.04"],
+        ["P003", "图像生成API", "AIGC", "2024-01-01", "200", "30", "5", "49.0", "0.06"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import datetime
+from statsmodels.tsa.holtwinters import ExponentialSmoothing
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟供应链库存数据
+np.random.seed(42)
+products = ['AI写作助手', '代码生成器', '图像生成API', '语音合成', '数据分析平台']
+categories = ['AIGC', '开发工具', 'AIGC', 'AIGC', 'SaaS']
+lead_times = [7, 14, 5, 10, 15]
+unit_prices = [99, 199, 49, 79, 299]
+holding_cost_rates = [0.05, 0.04, 0.06, 0.055, 0.035]
+
+data = []
+for product_idx, (product, category, lead_time, unit_price, holding_cost_rate) in enumerate(zip(products, categories, lead_times, unit_prices, holding_cost_rates)):
+    # 生成6个月的日期
+    dates = pd.date_range(start='2024-01-01', end='2024-06-30', freq='D')
+    
+    for date in dates:
+        # 模拟销量
+        day_of_week = date.dayofweek
+        sales = np.random.randint(10, 50) + (5 if day_of_week in [5, 6] else 0)
+        
+        # 模拟库存水平
+        inventory_level = np.random.randint(50, 300)
+        
+        data.append({
+            'product_id': f'P{product_idx+1:03d}',
+            'product_name': product,
+            'category': category,
+            'date': date,
+            'inventory_level': inventory_level,
+            'sales': sales,
+            'lead_time': lead_time,
+            'unit_price': unit_price,
+            'holding_cost_rate': holding_cost_rate
+        })
+
+df = pd.DataFrame(data)
+print("=== 原始数据 ===")
+print(df.head())
+print(f"总记录数: {len(df)}")
+print(f"产品数: {df['product_id'].nunique()}")
+
+# 1. 数据探索
+print("\\n=== 1. 数据探索 ===")
+# 各产品总销量和平均库存
+product_summary = df.groupby('product_name').agg({
+    'sales': 'sum',
+    'inventory_level': 'mean'
+}).rename(columns={
+    'sales': '总销量',
+    'inventory_level': '平均库存'
+})
+print("产品汇总:")
+print(product_summary)
+
+# 2. 需求预测
+print("\\n=== 2. 需求预测 ===")
+forecast_results = []
+
+for product in products:
+    product_data = df[df['product_name'] == product].set_index('date').sort_index()
+    
+    # 使用霍尔特-温特斯指数平滑进行预测
+    try:
+        model = ExponentialSmoothing(product_data['sales'], 
+                                      trend='add', 
+                                      seasonal='add', 
+                                      seasonal_periods=7)
+        model_fit = model.fit()
+        forecast = model_fit.forecast(30)  # 预测未来30天
+        
+        forecast_results.append({
+            '产品': product,
+            '平均日销量': product_data['sales'].mean(),
+            '预测30天销量': forecast.sum()
+        })
+    except:
+        print(f"{product}预测失败")
+
+forecast_df = pd.DataFrame(forecast_results)
+print("需求预测结果:")
+print(forecast_df)
+
+# 3. 库存分析
+print("\\n=== 3. 库存分析 ===")
+# 计算库存周转率
+inventory_turnover = df.groupby('product_name').agg({
+    'sales': 'sum',
+    'inventory_level': 'mean'
+}).assign(库存周转率=lambda x: x['sales'] / x['inventory_level'])[['库存周转率']]
+print("库存周转率:")
+print(inventory_turnover)
+
+# 计算安全库存
+print("\\n安全库存计算:")
+for product in products:
+    product_data = df[df['product_name'] == product]
+    
+    # 平均日销量
+    avg_sales = product_data['sales'].mean()
+    
+    # 销量标准差
+    sales_std = product_data['sales'].std()
+    
+    # 服务水平95%对应的Z值
+    z_value = 1.65
+    
+    # 提前期
+    lead_time = product_data['lead_time'].iloc[0]
+    
+    # 安全库存
+    safety_stock = z_value * sales_std * np.sqrt(lead_time)
+    
+    # 再订货点
+    reorder_point = avg_sales * lead_time + safety_stock
+    
+    print(f"{product}:")
+    print(f"  平均日销量: {avg_sales:.2f}")
+    print(f"  销量标准差: {sales_std:.2f}")
+    print(f"  提前期: {lead_time}天")
+    print(f"  安全库存: {safety_stock:.2f}")
+    print(f"  再订货点: {reorder_point:.2f}")
+
+# 4. 成本分析
+print("\\n=== 4. 成本分析 ===")
+cost_results = []
+for product in products:
+    product_data = df[df['product_name'] == product]
+    
+    unit_price = product_data['unit_price'].iloc[0]
+    holding_cost_rate = product_data['holding_cost_rate'].iloc[0]
+    
+    # 计算平均库存
+    avg_inventory = product_data['inventory_level'].mean()
+    
+    # 持有成本
+    holding_cost = avg_inventory * unit_price * holding_cost_rate
+    
+    # 缺货成本（简化版，假设每次缺货损失10%销售额）
+    # 这里我们简化处理，计算平均库存水平
+    total_sales = product_data['sales'].sum()
+    avg_sales = total_sales / len(product_data)
+    stockout_cost = (max(0, avg_sales - avg_inventory) * unit_price * 0.1 * len(product_data))
+    
+    # 总成本
+    total_cost = holding_cost + stockout_cost
+    
+    cost_results.append({
+        '产品': product,
+        '平均库存': avg_inventory,
+        '持有成本': holding_cost,
+        '缺货成本': stockout_cost,
+        '总成本': total_cost
+    })
+
+cost_df = pd.DataFrame(cost_results).sort_values('总成本', ascending=False)
+print("成本分析:")
+print(cost_df)
+
+# 5. 优化建议
+print("\\n=== 5. 优化建议 ===")
+print("1. 对于库存周转率低的产品，考虑减少安全库存")
+print("2. 对于需求波动大的产品，适当提高安全库存")
+print("3. 与供应商合作，缩短提前期，降低安全库存水平")
+print("4. 优化库存管理，降低持有成本和缺货成本")
+print("5. 使用ABC分类法，对不同价值产品采用不同的库存策略")
+`,
+    expectedResults: [
+      "数据探索结果",
+      "需求预测结果",
+      "库存分析结果",
+      "成本分析结果",
+      "库存优化建议"
+    ],
+    advancedTasks: [
+      "实现ABC分类法",
+      "优化再订货点和安全库存",
+      "构建库存仿真模型",
+      "开发库存管理系统"
+    ]
+  },
+  {
+    id: 13,
+    title: "社交媒体情感分析",
+    description: "学习分析社交媒体文本数据，进行情感分类，了解用户对产品或服务的评价",
+    dataset: {
+      filename: "social_media_sentiment.csv",
+      fields: [
+        { name: "post_id", meaning: "帖子ID", type: "string" },
+        { name: "platform", meaning: "平台", type: "string" },
+        { name: "text", meaning: "文本内容", type: "string" },
+        { name: "user_id", meaning: "用户ID", type: "string" },
+        { name: "timestamp", meaning: "时间戳", type: "datetime" },
+        { name: "likes", meaning: "点赞数", type: "int" },
+        { name: "shares", meaning: "分享数", type: "int" },
+        { name: "comments", meaning: "评论数", type: "int" }
+      ],
+      sampleData: [
+        ["post_id", "platform", "text", "user_id", "timestamp", "likes", "shares", "comments"],
+        ["P001", "微博", "这个AI写作助手真的太好用了！提高了我的工作效率！", "U001", "2024-01-01 09:00:00", "120", "30", "15"],
+        ["P002", "微信", "代码生成器有时候会有bug，但总体还不错", "U002", "2024-01-02 10:00:00", "80", "15", "10"],
+        ["P003", "抖音", "图像生成API生成的图片太惊艳了，超出预期！", "U003", "2024-01-03 11:00:00", "250", "80", "25"],
+        ["P004", "微博", "语音合成功能一般，希望能改进声音自然度", "U004", "2024-01-04 12:00:00", "60", "10", "8"],
+        ["P005", "微信", "数据分析平台帮我解决了很多问题，值得推荐！", "U005", "2024-01-05 13:00:00", "180", "45", "20"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import datetime
+import re
+from collections import Counter
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟社交媒体数据
+np.random.seed(42)
+n_posts = 1000
+
+# 平台
+platforms = ['微博', '微信', '抖音', '知乎', '小红书']
+
+# 产品
+products = ['AI写作助手', '代码生成器', '图像生成API', '语音合成', '数据分析平台']
+
+# 积极、消极词汇
+positive_words = ['好用', '不错', '惊艳', '推荐', '强大', '喜欢', '棒', '优秀', '完美', '满意']
+negative_words = ['bug', '一般', '希望改进', '失望', '差', '不好', '垃圾', '慢', '贵', '卡顿']
+
+# 生成文本模板
+text_templates = [
+    '这个{product}真的太{adj}了！{comment}',
+    '{product}有时候会有{negative}，但总体还{positive}',
+    '{product}帮我解决了很多问题，值得推荐！',
+    '{product}功能{comment}，希望能改进{improve}',
+    '使用{product}一段时间了，感受是{comment}',
+    '强烈推荐{product}，{comment}',
+    '{product}比我预期的{comment}',
+    '今天试了{product}，感觉{comment}',
+    '公司里很多人在用{product}，{comment}',
+    '对于{product}，我觉得{comment}'
+]
+
+# 生成数据
+data = []
+for i in range(n_posts):
+    platform = np.random.choice(platforms, p=[0.3, 0.25, 0.2, 0.15, 0.1])
+    product = np.random.choice(products)
+    
+    # 随机选择模板
+    template_idx = np.random.randint(0, len(text_templates))
+    template = text_templates[template_idx]
+    
+    # 确定情感方向
+    sentiment_positive = np.random.random() > 0.3
+    
+    # 填充模板
+    if template_idx in [0, 2, 5, 6, 7, 8, 9]:
+        if sentiment_positive:
+            adj = np.random.choice(positive_words)
+            comment = np.random.choice(['提高了我的工作效率', '超出预期', '功能强大', '性价比高'])
+            text = template.format(product=product, adj=adj, comment=comment)
+        else:
+            adj = np.random.choice(negative_words)
+            comment = np.random.choice(['还有改进空间', '让人失望', '需要优化', '希望能更好'])
+            text = template.format(product=product, adj=adj, comment=comment)
+    elif template_idx in [1]:
+        if sentiment_positive:
+            negative = np.random.choice(['小问题', '不稳定', '偶尔卡顿'])
+            positive = np.random.choice(['不错', '可以', '还行', '推荐'])
+        else:
+            negative = np.random.choice(['bug', '很多问题', '经常崩溃', '太差'])
+            positive = np.random.choice(['一般', '不行', '不推荐'])
+        text = template.format(product=product, negative=negative, positive=positive)
+    else:
+        if sentiment_positive:
+            comment = np.random.choice(['功能强大', '非常好用', '值得推荐', '超出预期'])
+            improve = np.random.choice(['更多功能', '服务', '用户体验', ''])
+        else:
+            comment = np.random.choice(['功能一般', '需要优化', '希望改进', '不太满意'])
+            improve = np.random.choice(['速度', '稳定性', '用户体验', '功能'])
+        text = template.format(product=product, comment=comment, improve=improve)
+    
+    # 生成互动数据
+    likes = np.random.randint(10, 300)
+    shares = np.random.randint(5, 100)
+    comments = np.random.randint(3, 50)
+    
+    # 生成时间戳
+    start_date = datetime(2024, 1, 1)
+    timestamp = start_date + pd.Timedelta(days=np.random.randint(0, 30), 
+                                           hours=np.random.randint(0, 24),
+                                           minutes=np.random.randint(0, 60))
+    
+    data.append({
+        'post_id': f'P{i+1:03d}',
+        'platform': platform,
+        'text': text,
+        'user_id': f'U{np.random.randint(1, 501):03d}',
+        'timestamp': timestamp,
+        'likes': likes,
+        'shares': shares,
+        'comments': comments,
+        'sentiment': '积极' if sentiment_positive else '消极'
+    })
+
+df = pd.DataFrame(data)
+print("=== 原始数据 ===")
+print(df.head())
+print(f"总帖子数: {len(df)}")
+
+# 1. 情感分布
+print("\\n=== 1. 情感分布 ===")
+sentiment_distribution = df['sentiment'].value_counts(normalize=True)
+print("情感分布:")
+print(sentiment_distribution)
+
+# 2. 各产品情感分析
+print("\\n=== 2. 各产品情感分析 ===")
+product_sentiment = pd.crosstab(df['platform'], df['sentiment'], normalize='index')
+print("产品情感分析:")
+print(product_sentiment)
+
+# 3. 文本分析
+print("\\n=== 3. 文本分析 ===")
+# 简单词频分析
+all_texts = ' '.join(df['text'].tolist())
+words = all_texts.split()
+
+# 过滤掉标点符号和停用词
+stop_words = ['的', '了', '在', '是', '我', '有', '和', '就', '不', '人', '都', '一', '一个', '上', '也', '很', '到', '说', '要', '去', '你', '会', '着', '没有', '看', '好', '自己', '这']
+words = [word for word in words if word not in stop_words and len(word) > 1]
+
+# 词频统计
+word_counts = Counter(words)
+top_words = word_counts.most_common(20)
+print("高频词:")
+print([word for word, count in top_words])
+
+# 4. 平台分析
+print("\\n=== 4. 平台分析 ===")
+platform_performance = df.groupby('platform').agg({
+    'likes': 'mean',
+    'shares': 'mean',
+    'comments': 'mean',
+    'post_id': 'count'
+}).rename(columns={
+    'likes': '平均点赞',
+    'shares': '平均分享',
+    'comments': '平均评论',
+    'post_id': '帖子数'
+}).sort_values('帖子数', ascending=False)
+print("平台表现:")
+print(platform_performance)
+
+# 5. 时间分析
+print("\\n=== 5. 时间分析 ===")
+df['timestamp'] = pd.to_datetime(df['timestamp'])
+df['hour'] = df['timestamp'].dt.hour
+df['day_of_week'] = df['timestamp'].dt.dayofweek
+
+# 小时级分布
+hourly_distribution = df.groupby('hour')['post_id'].count()
+print("小时级分布:")
+print(hourly_distribution)
+
+# 6. 可视化分析
+print("\\n=== 6. 可视化分析 ===")
+print("已生成以下图表:")
+print("1. 情感分布饼图")
+print("2. 各产品情感对比柱状图")
+print("3. 平台互动对比柱状图")
+print("4. 高频词云")
+
+# 7. 分析结论
+print("\\n=== 7. 分析结论 ===")
+print("1. 大部分用户反馈是积极的")
+print("2. 不同产品的情感分布有所差异")
+print("3. 不同平台的互动效果不同")
+print("4. 建议重点关注负面评价，改进产品")
+print("5. 利用社交媒体数据及时了解用户反馈")
+`,
+    expectedResults: [
+      "情感分布结果",
+      "各产品情感分析结果",
+      "文本分析结果",
+      "平台分析结果",
+      "时间分析结果",
+      "可视化分析图表",
+      "分析结论和建议"
+    ],
+    advancedTasks: [
+      "实现更复杂的情感分析算法",
+      "分析主题词",
+      "构建情感预警系统",
+      "分析用户画像和情感关系"
+    ]
+  },
+  {
+    id: 14,
+    title: "产品价格敏感度分析",
+    description: "学习分析产品价格与销量的关系，确定价格弹性，优化产品定价策略",
+    dataset: {
+      filename: "product_price_sensitivity.csv",
+      fields: [
+        { name: "product_id", meaning: "产品ID", type: "string" },
+        { name: "product_name", meaning: "产品名称", type: "string" },
+        { name: "date", meaning: "日期", type: "datetime" },
+        { name: "price", meaning: "价格", type: "float" },
+        { name: "sales_volume", meaning: "销量", type: "int" },
+        { name: "promotion", meaning: "是否促销", type: "boolean" },
+        { name: "advertising_spend", meaning: "广告支出", type: "float" },
+        { name: "competitor_price", meaning: "竞争对手价格", type: "float" }
+      ],
+      sampleData: [
+        ["product_id", "product_name", "date", "price", "sales_volume", "promotion", "advertising_spend", "competitor_price"],
+        ["P001", "AI写作助手", "2024-01-01", "99.0", "20", "False", "1000", "109.0"],
+        ["P001", "AI写作助手", "2024-01-02", "89.0", "35", "True", "1500", "109.0"],
+        ["P002", "代码生成器", "2024-01-01", "199.0", "15", "False", "800", "219.0"],
+        ["P002", "代码生成器", "2024-01-02", "199.0", "18", "False", "800", "219.0"],
+        ["P003", "图像生成API", "2024-01-01", "49.0", "50", "False", "600", "59.0"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import datetime
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import StandardScaler
+import warnings
+
+warnings.filterwarnings('ignore')
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟产品价格敏感度数据
+np.random.seed(42)
+products = ['AI写作助手', '代码生成器', '图像生成API', '语音合成', '数据分析平台']
+base_prices = [99, 199, 49, 79, 299]
+base_sales = [20, 15, 50, 30, 10]
+price_elasticities = [-1.5, -1.2, -2.0, -1.8, -1.0]
+
+data = []
+for product_idx, (product, base_price, base_sale, elasticity) in enumerate(zip(products, base_prices, base_sales, price_elasticities)):
+    # 生成6个月的日期
+    dates = pd.date_range(start='2024-01-01', end='2024-06-30', freq='D')
+    
+    for date in dates:
+        # 随机价格波动
+        price_variation = np.random.normal(0, 0.1)
+        price = base_price * (1 + price_variation)
+        
+        # 促销概率
+        promotion = np.random.random() < 0.2
+        if promotion:
+            price = price * 0.9  # 促销价9折
+        
+        # 销量模型
+        price_change = (price - base_price) / base_price
+        sales_change = elasticity * price_change
+        
+        # 促销带来的销量增长
+        if promotion:
+            sales_change += 0.5
+        
+        # 广告支出影响
+        advertising_spend = np.random.randint(500, 2000)
+        advertising_impact = advertising_spend / 10000
+        
+        # 竞争对手价格
+        competitor_price = base_price * 1.1 + np.random.normal(0, 5)
+        price_ratio = price / competitor_price
+        competition_impact = (1 - price_ratio) * 0.3
+        
+        # 随机波动
+        random_change = np.random.normal(0, 0.2)
+        
+        # 最终销量
+        sales_volume = int(base_sale * (1 + sales_change + advertising_impact + competition_impact + random_change))
+        sales_volume = max(1, sales_volume)
+        
+        data.append({
+            'product_id': f'P{product_idx+1:03d}',
+            'product_name': product,
+            'date': date,
+            'price': price,
+            'sales_volume': sales_volume,
+            'promotion': promotion,
+            'advertising_spend': advertising_spend,
+            'competitor_price': competitor_price
+        })
+
+df = pd.DataFrame(data)
+print("=== 原始数据 ===")
+print(df.head())
+print(f"总记录数: {len(df)}")
+
+# 1. 数据探索
+print("\\n=== 1. 数据探索 ===")
+# 各产品汇总
+product_summary = df.groupby('product_name').agg({
+    'price': ['mean', 'min', 'max'],
+    'sales_volume': ['mean', 'sum'],
+    'promotion': 'mean'
+}).round(2)
+product_summary.columns = ['平均价格', '最低价格', '最高价格', '平均销量', '总销量', '促销比例']
+print("产品汇总:")
+print(product_summary)
+
+# 2. 价格与销量关系分析
+print("\\n=== 2. 价格与销量关系分析 ===")
+for product in products:
+    product_data = df[df['product_name'] == product]
+    
+    # 计算价格弹性
+    # 销量变化百分比 / 价格变化百分比
+    product_data_sorted = product_data.sort_values('date')
+    
+    # 忽略促销期间的数据
+    product_data_regular = product_data_sorted[~product_data_sorted['promotion']]
+    
+    if len(product_data_regular) > 10:
+        price_changes = product_data_regular['price'].pct_change().dropna()
+        sales_changes = product_data_regular['sales_volume'].pct_change().dropna()
+        
+        # 计算弹性
+        valid_pairs = price_changes.index.intersection(sales_changes.index)
+        if len(valid_pairs) > 0:
+            elasticity_estimates = sales_changes[valid_pairs] / price_changes[valid_pairs].replace(0, np.nan)
+            elasticity_estimates = elasticity_estimates.dropna()
+            
+            if len(elasticity_estimates) > 0:
+                avg_elasticity = elasticity_estimates.mean()
+                print(f"{product} 估计价格弹性: {avg_elasticity:.4f}")
+
+# 3. 回归分析
+print("\\n=== 3. 回归分析 ===")
+for product in products:
+    product_data = df[df['product_name'] == product]
+    
+    # 准备特征
+    X = product_data[['price', 'promotion', 'advertising_spend', 'competitor_price']]
+    X = pd.get_dummies(X, drop_first=True)
+    y = product_data['sales_volume']
+    
+    # 拟合线性回归
+    model = LinearRegression()
+    model.fit(X, y)
+    
+    # 打印结果
+    print(f"{product} 回归分析:")
+    print(f"  截距: {model.intercept_:.4f}")
+    for feature, coef in zip(X.columns, model.coef_):
+        print(f"  {feature}: {coef:.4f}")
+    print(f"  R²: {model.score(X, y):.4f}")
+
+# 4. 促销效果分析
+print("\\n=== 4. 促销效果分析 ===")
+promotion_impact = df.groupby('product_name').agg({
+    'sales_volume': [
+        lambda x: x[df['promotion']].mean(),
+        lambda x: x[~df['promotion']].mean()
+    ]
+}).round(2)
+promotion_impact.columns = ['促销平均销量', '非促销平均销量']
+promotion_impact['销量提升率'] = (promotion_impact['促销平均销量'] - promotion_impact['非促销平均销量']) / promotion_impact['非促销平均销量'] * 100
+print("促销效果:")
+print(promotion_impact)
+
+# 5. 价格优化
+print("\\n=== 5. 价格优化 ===")
+for product in products:
+    product_data = df[df['product_name'] == product]
+    base_price = base_prices[products.index(product)]
+    elasticity = price_elasticities[products.index(product)]
+    
+    # 收入 = 价格 * 销量
+    # 销量 = 基准销量 * (1 + 弹性 * 价格变化百分比)
+    # 收入 = 价格 * 基准销量 * (1 + 弹性 * (价格 - 基准价格)/基准价格)
+    # 求导找到最优价格
+    optimal_price = base_price * (1 - 1 / elasticity)
+    
+    # 计算当前收入
+    current_revenue = (product_data['price'] * product_data['sales_volume']).mean()
+    
+    # 计算最优价格下的预计收入
+    price_change = (optimal_price - base_price) / base_price
+    sales_change = elasticity * price_change
+    optimal_sales = base_sales[products.index(product)] * (1 + sales_change)
+    optimal_revenue = optimal_price * optimal_sales
+    
+    print(f"{product}:")
+    print(f"  基准价格: {base_price:.2f}")
+    print(f"  价格弹性: {elasticity:.4f}")
+    print(f"  最优价格: {optimal_price:.2f}")
+    print(f"  当前平均收入: {current_revenue:.2f}")
+    print(f"  预计最优收入: {optimal_revenue:.2f}")
+
+# 6. 分析结论
+print("\\n=== 6. 分析结论 ===")
+print("1. 价格弹性分析显示不同产品的价格敏感度不同")
+print("2. 促销对销量有明显的提升作用")
+print("3. 广告支出和竞争对手价格也影响销量")
+print("4. 建议基于价格弹性优化产品定价")
+print("5. 设计有效的促销策略，提高收入和利润")
+`,
+    expectedResults: [
+      "数据探索结果",
+      "价格与销量关系分析结果",
+      "回归分析结果",
+      "促销效果分析结果",
+      "价格优化建议",
+      "分析结论和建议"
+    ],
+    advancedTasks: [
+      "实现更复杂的定价模型",
+      "考虑竞争对手策略",
+      "构建动态定价系统",
+      "设计价格优化算法"
+    ]
+  },
+  {
+    id: 15,
+    title: "员工绩效分析与优化",
+    description: "学习分析员工绩效数据，识别高绩效员工特征，提供绩效改进建议",
+    dataset: {
+      filename: "employee_performance.csv",
+      fields: [
+        { name: "employee_id", meaning: "员工ID", type: "string" },
+        { name: "department", meaning: "部门", type: "string" },
+        { name: "role", meaning: "职位", type: "string" },
+        { name: "age", meaning: "年龄", type: "int" },
+        { name: "tenure", meaning: "司龄(年)", type: "int" },
+        { name: "education", meaning: "教育背景", type: "string" },
+        { name: "salary", meaning: "薪资", type: "float" },
+        { name: "performance_rating", meaning: "绩效评分", type: "int" },
+        { name: "projects_completed", meaning: "完成项目数", type: "int" },
+        { name: "average_project_score", meaning: "平均项目评分", type: "float" },
+        { name: "overtime_hours", meaning: "加班时长", type: "int" },
+        { name: "training_hours", meaning: "培训时长", type: "int" }
+      ],
+      sampleData: [
+        ["employee_id", "department", "role", "age", "tenure", "education", "salary", "performance_rating", "projects_completed", "average_project_score", "overtime_hours", "training_hours"],
+        ["E001", "技术部", "数据分析师", "28", "3", "本科", "15000", "4", "12", "4.2", "80", "40"],
+        ["E002", "技术部", "高级数据分析师", "35", "8", "硕士", "25000", "5", "18", "4.8", "120", "60"],
+        ["E003", "市场部", "市场分析师", "30", "5", "本科", "12000", "3", "8", "3.5", "60", "30"],
+        ["E004", "销售部", "销售代表", "25", "2", "专科", "10000", "2", "6", "2.8", "150", "20"],
+        ["E005", "技术部", "数据工程师", "32", "6", "硕士", "20000", "4", "15", "4.5", "100", "50"]
+      ]
+    },
+    codeTemplate: `import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Micro Hei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 模拟员工绩效数据
+np.random.seed(42)
+n_employees = 500
+
+departments = ['技术部', '市场部', '销售部', '财务部', '人力资源部']
+roles = ['初级数据分析师', '数据分析师', '高级数据分析师', '数据科学家', 
+         '市场分析师', '销售代表', '财务分析师', 'HR专员']
+education_levels = ['专科', '本科', '硕士', '博士']
+
+data = []
+for i in range(n_employees):
+    department = np.random.choice(departments, p=[0.35, 0.2, 0.25, 0.1, 0.1])
+    
+    # 根据部门分配职位
+    if department == '技术部':
+        role = np.random.choice(roles[:4], p=[0.3, 0.4, 0.2, 0.1])
+    elif department == '市场部':
+        role = np.random.choice(roles[4:5], p=[1.0])
+    elif department == '销售部':
+        role = np.random.choice(roles[5:6], p=[1.0])
+    elif department == '财务部':
+        role = np.random.choice(roles[6:7], p=[1.0])
+    else:
+        role = np.random.choice(roles[7:8], p=[1.0])
+    
+    # 基础薪资
+    base_salary = {
+        '初级数据分析师': 10000,
+        '数据分析师': 15000,
+        '高级数据分析师': 22000,
+        '数据科学家': 30000,
+        '市场分析师': 12000,
+        '销售代表': 9000,
+        '财务分析师': 14000,
+        'HR专员': 11000
+    }[role]
+    
+    age = np.random.randint(22, 55)
+    tenure = np.random.randint(1, 15)
+    
+    # 教育背景
+    education = np.random.choice(education_levels, p=[0.2, 0.5, 0.25, 0.05])
+    
+    # 薪资调整
+    salary = base_salary + tenure * 500 + (education_levels.index(education) - 1) * 2000
+    salary = salary + np.random.normal(0, 1000)
+    salary = max(8000, salary)
+    
+    # 绩效评分（1-5）
+    performance_rating = np.random.randint(1, 6)
+    
+    # 完成项目数
+    projects_completed = 5 + tenure * 2 + performance_rating * 2 + np.random.randint(0, 5)
+    
+    # 平均项目评分
+    average_project_score = 2.5 + performance_rating * 0.5 + np.random.normal(0, 0.3)
+    average_project_score = max(1.0, min(5.0, average_project_score))
+    
+    # 加班时长
+    overtime_hours = np.random.randint(20, 200)
+    
+    # 培训时长
+    training_hours = np.random.randint(10, 100)
+    
+    data.append({
+        'employee_id': f'E{i+1:03d}',
+        'department': department,
+        'role': role,
+        'age': age,
+        'tenure': tenure,
+        'education': education,
+        'salary': salary,
+        'performance_rating': performance_rating,
+        'projects_completed': projects_completed,
+        'average_project_score': average_project_score,
+        'overtime_hours': overtime_hours,
+        'training_hours': training_hours
+    })
+
+df = pd.DataFrame(data)
+print("=== 原始数据 ===")
+print(df.head())
+print(f"总员工数: {len(df)}")
+
+# 1. 数据探索
+print("\\n=== 1. 数据探索 ===")
+# 描述性统计
+print(df.describe())
+
+# 各部门人数
+department_counts = df['department'].value_counts()
+print("\\n各部门人数:")
+print(department_counts)
+
+# 绩效分布
+print("\\n绩效分布:")
+print(df['performance_rating'].value_counts().sort_index())
+
+# 2. 部门绩效分析
+print("\\n=== 2. 部门绩效分析 ===")
+department_performance = df.groupby('department').agg({
+    'performance_rating': 'mean',
+    'salary': 'mean',
+    'projects_completed': 'mean',
+    'average_project_score': 'mean'
+}).round(2).sort_values('performance_rating', ascending=False)
+print("部门绩效:")
+print(department_performance)
+
+# 3. 高绩效员工特征分析
+print("\\n=== 3. 高绩效员工特征分析 ===")
+high_performers = df[df['performance_rating'] >= 4]
+low_performers = df[df['performance_rating'] <= 2]
+
+# 对比分析
+comparison_features = ['age', 'tenure', 'salary', 'projects_completed', 'average_project_score', 'overtime_hours', 'training_hours']
+high_perf_stats = high_performers[comparison_features].mean().round(2)
+low_perf_stats = low_performers[comparison_features].mean().round(2)
+comparison_df = pd.DataFrame({'高绩效员工': high_perf_stats, '低绩效员工': low_perf_stats})
+comparison_df['差异'] = ((comparison_df['高绩效员工'] - comparison_df['低绩效员工']) / comparison_df['低绩效员工'] * 100).round(2)
+print("高绩效与低绩效员工对比:")
+print(comparison_df)
+
+# 4. 绩效预测
+print("\\n=== 4. 绩效预测 ===")
+# 准备数据
+X = df[['age', 'tenure', 'salary', 'projects_completed', 'average_project_score', 'overtime_hours', 'training_hours']].copy()
+
+# 编码分类变量
+le_department = LabelEncoder()
+le_role = LabelEncoder()
+le_education = LabelEncoder()
+
+X['department'] = le_department.fit_transform(df['department'])
+X['role'] = le_role.fit_transform(df['role'])
+X['education'] = le_education.fit_transform(df['education'])
+
+y = df['performance_rating']
+
+# 划分训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# 特征标准化
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# 训练随机森林模型
+rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
+rf_model.fit(X_train_scaled, y_train)
+
+# 预测
+y_pred = rf_model.predict(X_test_scaled)
+
+# 评估
+print("模型评估:")
+print(classification_report(y_test, y_pred))
+
+# 特征重要性
+print("\\n特征重要性:")
+feature_importance = pd.DataFrame({
+    'feature': X.columns,
+    'importance': rf_model.feature_importances_
+}).sort_values('importance', ascending=False)
+print(feature_importance)
+
+# 5. 绩效提升建议
+print("\\n=== 5. 绩效提升建议 ===")
+print("1. 培训时长与绩效呈正相关，建议增加员工培训机会")
+print("2. 高绩效员工完成的项目更多，平均项目评分更高")
+print("3. 司龄与绩效有一定关系，但不是线性关系")
+print("4. 建议为低绩效员工制定个性化改进计划")
+print("5. 建立有效的激励机制，提升员工工作积极性")
+`,
+    expectedResults: [
+      "数据探索结果",
+      "部门绩效分析结果",
+      "高绩效员工特征分析结果",
+      "绩效预测结果",
+      "绩效提升建议"
+    ],
+    advancedTasks: [
+      "实现更复杂的绩效预测模型",
+      "分析团队绩效",
+      "设计绩效管理系统",
+      "制定个性化绩效改进方案"
+    ]
+  }
+];
